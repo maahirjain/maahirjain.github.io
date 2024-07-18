@@ -8,12 +8,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default merge(common, {
-  mode: "development",
+    mode: "development",
 
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-    assetModuleFilename: "[name][ext]"
-  }
+    output: {
+        filename: "[name].js",
+        path: path.resolve(__dirname, "dist"),
+        clean: true,
+        assetModuleFilename: "[name][ext]"
+    }
 });
