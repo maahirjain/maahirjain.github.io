@@ -1,0 +1,72 @@
+@import "./themes";
+
+$container-padding: min(0.85rem, 68px);
+$container-width: 75%;
+$header-height: min(544px, 8rem);
+$menu-element-dimension: min(68px, 2rem);
+$menu-btn-font-size: min(34px, 1rem);
+$orange: rgb(255, 117, 24);
+$pink: rgb(230, 0, 103);
+  
+* {
+    font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background-color: themed(bg);
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+
+.container {
+    position: relative;
+    background: none;
+    width: $container-width;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.bg-header {
+    position: absolute;
+    background-color: themed(primary);
+    width: 100%;
+    height: $header-height;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: $header-height;
+    padding: $container-padding;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.title {
+    font-size: $menu-element-dimension;
+    font-weight: bolder;
+}
+
+.content {
+    padding: $container-padding;
+}
+  
