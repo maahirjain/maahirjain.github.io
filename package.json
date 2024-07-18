@@ -5,8 +5,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint . --ext .ts",
-    "lint-and-fix": "eslint . --ext .ts --fix",
+    "lint": "eslint .",
+    "lint-and-fix": "eslint . --fix",
     "docs": "typedoc --tsconfig ./tsconfig.docs.json",
     "test": "jest",
     "gh-deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
