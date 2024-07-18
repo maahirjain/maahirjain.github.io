@@ -53,12 +53,12 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
 
-.menu > div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 }
 
 .title {
