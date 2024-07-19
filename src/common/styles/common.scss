@@ -62,10 +62,6 @@ body {
         gap: 60px;
     }
 
-    svg:hover {
-        transform: scale(1.2);
-    }
-
     a:hover {
         text-decoration: underline;
         text-underline-offset: 8px;
@@ -89,7 +85,6 @@ body {
     width: min-content;
     padding: 8px;
     border-radius: 0px 0px 10px 10px;
-    animation: fadeIn 1s 1;
 
     a {
         opacity: 75%;
@@ -108,7 +103,32 @@ svg {
     width: 30px;
 }
 
+#home:hover {
+    transform: scale(1.2);
+}
+
+#moon:hover {
+    animation: swing 2s infinite;
+}
+
+#sun:hover {
+    animation: spin 4s infinite;
+}
+
 .content {
     padding: $container-padding;
 }
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes swing { 
+    20% { transform: rotate(15deg); } 
+    40% { transform: rotate(-10deg); } 
+    60% { transform: rotate(5deg); } 
+    80% { transform: rotate(-5deg); } 
+    100% { transform: rotate(0deg); } 
+} 
   
