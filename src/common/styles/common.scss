@@ -26,8 +26,7 @@ $pink: rgb(230, 0, 103);
     }
 
     #projects-dropdown {
-        background-color: themed(quinary);
-        color: themed(contrast);
+        background-color: themed(primary);
     }
 }
 
@@ -37,13 +36,11 @@ $pink: rgb(230, 0, 103);
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    overflow: auto;
 }
 
 .container {
-    position: relative;
     background: none;
     width: $container-width;
     height: 100%;
@@ -52,11 +49,11 @@ body {
 
 .menu {
     position: sticky;
-    top: 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    border-radius: 10px;
+    padding: 8px;
+    border-radius: 0px 0px 10px 10px;
 
     > div {
         display: flex;
@@ -86,11 +83,12 @@ body {
 }
 
 #projects-dropdown {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
+    width: min-content;
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     animation: fadeIn 1s 1;
 
     a {
@@ -112,10 +110,5 @@ svg {
 
 .content {
     padding: $container-padding;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
   

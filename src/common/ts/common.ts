@@ -54,15 +54,15 @@ export function createMenu(): void {
 
     projectsDropdownDiv.classList.add("hide");
 
-    projectsDropdownDiv.style.left =
-        "" + projectsDiv.getBoundingClientRect().left + "px";
-    projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight + 8}px`;
+    projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
+    projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight}px`;
 
-    document.body.appendChild(projectsDropdownDiv);
+    document
+        .querySelector(".container")
+        ?.insertBefore(projectsDropdownDiv, document.querySelector(".content"));
 
     window.addEventListener("resize", () => {
-        projectsDropdownDiv.style.left =
-            "" + projectsDiv.getBoundingClientRect().left + "px";
+        projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
     });
 
     const dropDownSVGElement: Node | null = document.querySelector(
