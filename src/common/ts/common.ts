@@ -57,9 +57,7 @@ export function createMenu(): void {
     projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
     projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight}px`;
 
-    document
-        .querySelector(".container")
-        ?.insertBefore(projectsDropdownDiv, document.querySelector(".content"));
+    document.body.appendChild(projectsDropdownDiv);
 
     window.addEventListener("resize", () => {
         projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
