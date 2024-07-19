@@ -52,6 +52,8 @@ export function createMenu(): void {
     menu?.appendChild(div1);
     menu?.appendChild(div2);
 
+    projectsDropdownDiv.classList.add("hide");
+
     projectsDropdownDiv.style.left =
         "" + projectsDiv.getBoundingClientRect().left + "px";
     projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight + 8}px`;
@@ -61,5 +63,22 @@ export function createMenu(): void {
     window.addEventListener("resize", () => {
         projectsDropdownDiv.style.left =
             "" + projectsDiv.getBoundingClientRect().left + "px";
+    });
+
+    const dropDownSVGElement: Node | null = document.querySelector(
+        "#projects-menu-item svg"
+    );
+
+    dropDownSVGElement?.addEventListener("click", () => {
+        projectsDropdownDiv.classList.remove("hide");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (
+            !projectsDropdownDiv?.contains(e.target as Node) &&
+            e.target != dropDownSVGElement
+        ) {
+            projectsDropdownDiv.classList.add("hide");
+        }
     });
 }
