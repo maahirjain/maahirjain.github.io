@@ -11,9 +11,6 @@ $pink: rgb(230, 0, 103);
 @include themify($themes) {
     body {
         background-color: themed(bg);
-    }
-
-    .container {
         color: themed(text);
     }
 
@@ -23,6 +20,15 @@ $pink: rgb(230, 0, 103);
 
     path {
         fill: themed(quinary);
+    }
+
+    #projects-menu-item path {
+        fill: themed(text);
+    }
+
+    #projects-dropdown {
+        background-color: themed(quinary);
+        color: themed(contrast);
     }
 }
 
@@ -76,6 +82,10 @@ body {
         gap: 60px;
     }
 
+    svg:hover {
+        transform: scale(1.2);
+    }
+
     a:hover {
         text-decoration: underline;
         text-underline-offset: 8px;
@@ -91,6 +101,23 @@ body {
         width: 25px;
     }
 }
+
+#projects-dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 10px;
+    z-index: 2;
+
+    a {
+        opacity: 75%;
+
+        &:hover {
+            opacity: 100%;
+        }
+    }
+} 
 
 svg {
     width: 30px;
