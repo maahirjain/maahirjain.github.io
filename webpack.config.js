@@ -7,12 +7,18 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-let htmlPageNames = ["about", "featured", "web", "mobile", "misc"];
+let htmlPageNames = [
+    ["about", "about"],
+    ["projects/featured", "featured"],
+    ["projects/web", "web"],
+    ["projects/mobile", "mobile"],
+    ["projects/misc", "misc"]
+];
 let multipleHtmlPlugins = htmlPageNames.map((name) => {
     return new HtmlWebpackPlugin({
-        template: `./src/${name}/${name}.html`, // relative path to the HTML files
-        filename: `${name}.html`, // output HTML files
-        chunks: [`${name}`] // respective TS files
+        template: `./src/${name[0]}/${name[1]}.html`, // relative path to the HTML files
+        filename: `${name[1]}.html`, // output HTML files
+        chunks: [`${name[1]}`] // respective TS files
     });
 });
 

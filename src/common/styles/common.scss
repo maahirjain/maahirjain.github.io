@@ -8,6 +8,16 @@ $menu-btn-font-size: min(34px, 1rem);
 $orange: rgb(255, 117, 24);
 $pink: rgb(230, 0, 103);
   
+@include themify($themes) {
+    body {
+        background-color: themed(bg);
+    }
+
+    .bg-header {
+        background-color: themed(primary);
+    }
+}
+
 * {
     font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
     box-sizing: border-box;
@@ -15,7 +25,6 @@ $pink: rgb(230, 0, 103);
 
 body {
     position: relative;
-    background-color: themed(bg);
     height: 100vh;
     margin: 0;
     overflow: auto;
@@ -32,7 +41,6 @@ body {
 
 .bg-header {
     position: absolute;
-    background-color: themed(primary);
     width: 100%;
     height: $header-height;
     top: 0;
