@@ -13,8 +13,20 @@ $pink: rgb(230, 0, 103);
         background-color: themed(bg);
     }
 
+    .container {
+        color: themed(text);
+    }
+
     .bg-header {
         background-color: themed(primary);
+    }
+
+    path {
+        fill: themed(quinary);
+    }
+
+    button {
+        color: themed(text);
     }
 }
 
@@ -24,7 +36,6 @@ $pink: rgb(230, 0, 103);
 }
 
 body {
-    position: relative;
     height: 100vh;
     margin: 0;
     overflow: auto;
@@ -67,6 +78,16 @@ body {
         flex-wrap: wrap;
         gap: 8px;
     }
+
+    button {
+        background: none;
+        font-size: $menu-btn-font-size;
+        border: none;
+    }
+}
+
+svg {
+    width: 30px;
 }
 
 .title {
