@@ -24,10 +24,6 @@ $pink: rgb(230, 0, 103);
     path {
         fill: themed(quinary);
     }
-
-    button {
-        color: themed(text);
-    }
 }
 
 * {
@@ -75,14 +71,24 @@ body {
 
     > div {
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 60px;
     }
 
-    button {
-        background: none;
-        font-size: $menu-btn-font-size;
-        border: none;
+    a:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+}
+
+#projects-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    svg {
+        width: 25px;
     }
 }
 
@@ -98,4 +104,5 @@ svg {
 .content {
     padding: $container-padding;
 }
+
   
