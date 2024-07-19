@@ -109,6 +109,7 @@ body {
     padding: 8px;
     border-radius: 10px;
     z-index: 2;
+    animation: fadeIn 1s 1;
 
     a {
         opacity: 75%;
@@ -136,4 +137,8 @@ svg {
     padding: $container-padding;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
   

@@ -76,7 +76,7 @@ export function createMenu(): void {
     document.addEventListener("click", (e) => {
         if (
             !projectsDropdownDiv?.contains(e.target as Node) &&
-            e.target != dropDownSVGElement
+            !dropDownSVGElement?.contains(e.target as Node)
         ) {
             projectsDropdownDiv.classList.add("hide");
         }
