@@ -1,13 +1,13 @@
 @import "../../common/styles/themes";
-@import "./background";
+// @import "./background";
 
 @include themify($themes) {
     .menu, #projects-dropdown {
-        background-color: themed(home) !important;
-        color: themed(contrast) !important;
+        background-color: themed(opacity) !important;
+        color: white !important;
 
         path {
-            fill: themed(contrast) !important;
+            fill: white !important;
         }
     }
 
@@ -32,6 +32,15 @@
 body {
     position: relative;
     overflow: hidden;
+}
+
+#homeDarkVid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .gradient-container, .container {
