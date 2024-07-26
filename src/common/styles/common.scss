@@ -53,7 +53,8 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 8px;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
+    margin-top: 16px;
 
     > div {
         display: flex;
