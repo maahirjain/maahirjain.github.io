@@ -1,4 +1,4 @@
-export function createMenu(): void {
+export function createMenu(homePath: string): void {
     const menu: HTMLElement | null = document.querySelector(".menu");
 
     const [div1, div2]: HTMLElement[] = [
@@ -81,6 +81,12 @@ export function createMenu(): void {
     });
 
     document.getElementById("moon")!.addEventListener("click", toggleTheme);
+
+    document.getElementById("home")?.addEventListener("click", () => {
+        const currClass: string = document.documentElement.className;
+        localStorage.setItem("currClass", currClass);
+        location.href = homePath;
+    });
 }
 
 export function toggleTheme(): void {
@@ -94,10 +100,12 @@ export function toggleTheme(): void {
             sunSVG;
         document.getElementById("sun")!.addEventListener("click", toggleTheme);
         root.className = "light-theme";
+        localStorage.setItem("currClass", "light-theme");
     } else if (root.classList.contains("light-theme")) {
         document.querySelector(".menu > div:last-child > svg")!.outerHTML =
             moonSVG;
         document.getElementById("moon")!.addEventListener("click", toggleTheme);
         root.className = "dark-theme";
+        localStorage.setItem("currClass", "dark-theme");
     }
 }

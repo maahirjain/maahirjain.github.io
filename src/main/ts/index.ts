@@ -4,7 +4,7 @@ import { createMenu } from "../../common/ts/common";
 import homeDarkBgVid from "../assets/home_dark_bg.mp4";
 import homeLightBgVid from "../assets/home_light_bg.mp4";
 
-createMenu();
+createMenu("./index.html");
 
 document.addEventListener("DOMContentLoaded", () => {
     const interBubble = document.querySelector<HTMLDivElement>(".interactive")!;
@@ -81,3 +81,10 @@ const callback = (
 const observer = new MutationObserver(callback);
 
 observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+
+window.addEventListener("load", () => {
+    const savedClass = localStorage.getItem("currClass");
+    if (savedClass) {
+        document.documentElement.className = savedClass;
+    }
+});
