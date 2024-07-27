@@ -61,6 +61,10 @@ body {
         align-items: center;
         flex-wrap: wrap;
         gap: 60px;
+
+        &:last-child {
+            gap: 20px;
+        }
     }
 
     a:hover {
@@ -112,14 +116,16 @@ svg {
     transform: scale(1.2);
 }
 
-
-
-#moon:hover {
+#moon:hover, #audio-on:hover, #audio-off:hover {
     animation: swing 2s infinite;
 }
 
 #sun:hover {
     animation: spin 4s infinite;
+}
+
+#audio-off {
+    display: none;
 }
 
 .content {

@@ -1,4 +1,7 @@
-export function createMenu(homePath: string): void {
+import clickAudioOnSrc from "../assets/sound_on.mp3";
+import clickAudioOffSrc from "../assets/sound_off.mp3";
+
+export function createMenu(): void {
     const menu: HTMLElement | null = document.querySelector(".menu");
 
     const [div1, div2]: HTMLElement[] = [
@@ -47,7 +50,11 @@ export function createMenu(homePath: string): void {
 
     const moonSVG: string = `<svg id="moon" class="theme-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.75,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.2,9.5"/></svg>`;
 
-    div2.innerHTML = moonSVG;
+    const audioOnSVG: string = `<svg id="audio-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>`;
+
+    const audioOffSVG: string = `<svg id="audio-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z" /></svg>`;
+
+    div2.innerHTML = moonSVG + audioOnSVG + audioOffSVG;
 
     menu?.appendChild(div1);
     menu?.appendChild(div2);
@@ -85,8 +92,10 @@ export function createMenu(homePath: string): void {
     document.getElementById("home")?.addEventListener("click", () => {
         const currClass: string = document.documentElement.className;
         localStorage.setItem("currClass", currClass);
-        location.href = homePath;
+        location.href = "./index.html";
     });
+
+    audioBtnListener();
 }
 
 export function toggleTheme(): void {
@@ -126,5 +135,54 @@ export function loadTheme() {
 
             document.documentElement.className = savedClass;
         }
+    });
+}
+
+function audioBtnListener() {
+    const audioOnSVG = document.getElementById("audio-on");
+    const audioOffSVG = document.getElementById("audio-off");
+
+    const clickAudioOn = new Audio(clickAudioOnSrc);
+    const clickAudioOff = new Audio(clickAudioOffSrc);
+
+    function toggleAudio(on: boolean) {
+        if (on) {
+            audioOnSVG!.style.display = "block";
+            audioOffSVG!.style.display = "none";
+            clickAudioOn.play();
+        } else {
+            audioOnSVG!.style.display = "none";
+            audioOffSVG!.style.display = "block";
+            stopAllAudio();
+            clickAudioOff.play();
+        }
+
+        localStorage.setItem("audioState", on ? "on" : "off");
+    }
+
+    function stopAllAudio() {
+        const allAudioElements = document.querySelectorAll("audio");
+        allAudioElements.forEach((audio) => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    }
+
+    const savedAudioState = localStorage.getItem("audioState");
+    if (savedAudioState === "on") {
+        audioOnSVG!.style.display = "block";
+        audioOffSVG!.style.display = "none";
+    } else {
+        audioOnSVG!.style.display = "none";
+        audioOffSVG!.style.display = "block";
+        stopAllAudio();
+    }
+
+    audioOnSVG!.addEventListener("click", () => {
+        toggleAudio(false);
+    });
+
+    audioOffSVG!.addEventListener("click", () => {
+        toggleAudio(true);
     });
 }

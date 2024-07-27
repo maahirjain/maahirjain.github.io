@@ -4,31 +4,29 @@ import { createMenu, loadTheme } from "../../common/ts/common";
 import homeDarkBgVid from "../assets/home_dark_bg.mp4";
 import homeLightBgVid from "../assets/home_light_bg.mp4";
 
-createMenu("./index.html");
+createMenu();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const interBubble = document.querySelector<HTMLDivElement>(".interactive")!;
-    let curX = 0;
-    let curY = 0;
-    let tgX = 0;
-    let tgY = 0;
+const interBubble = document.querySelector<HTMLDivElement>(".interactive")!;
+let curX = 0;
+let curY = 0;
+let tgX = 0;
+let tgY = 0;
 
-    function move() {
-        curX += (tgX - curX) / 20;
-        curY += (tgY - curY) / 20;
-        interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-        requestAnimationFrame(() => {
-            move();
-        });
-    }
-
-    window.addEventListener("mousemove", (event) => {
-        tgX = event.clientX;
-        tgY = event.clientY;
+function move() {
+    curX += (tgX - curX) / 20;
+    curY += (tgY - curY) / 20;
+    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+    requestAnimationFrame(() => {
+        move();
     });
+}
 
-    move();
+window.addEventListener("mousemove", (event) => {
+    tgX = event.clientX;
+    tgY = event.clientY;
 });
+
+move();
 
 const root: HTMLElement = document.documentElement;
 
