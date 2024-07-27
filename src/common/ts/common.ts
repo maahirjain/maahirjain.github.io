@@ -1,5 +1,8 @@
 import clickAudioOnSrc from "../assets/sound_on.mp3";
 import clickAudioOffSrc from "../assets/sound_off.mp3";
+import dropdownAudioSrc from "../assets/dropdown_sound.mp3";
+import switchOnAudioSrc from "../assets/switch_on.mp3";
+import switchOffAudioSrc from "../assets/switch_off.mp3";
 
 export function createMenu(): void {
     const menu: HTMLElement | null = document.querySelector(".menu");
@@ -66,6 +69,8 @@ export function createMenu(): void {
 
     document.body.appendChild(projectsDropdownDiv);
 
+    audioBtnListener();
+
     window.addEventListener("resize", () => {
         projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
     });
@@ -76,6 +81,10 @@ export function createMenu(): void {
 
     dropDownSVGElement?.addEventListener("click", () => {
         projectsDropdownDiv.classList.remove("hide");
+
+        if (localStorage.getItem("audioState") === "on") {
+            new Audio(dropdownAudioSrc).play();
+        }
     });
 
     document.addEventListener("click", (e) => {
@@ -94,8 +103,6 @@ export function createMenu(): void {
         localStorage.setItem("currClass", currClass);
         location.href = "./index.html";
     });
-
-    audioBtnListener();
 }
 
 export function toggleTheme(): void {
@@ -110,12 +117,20 @@ export function toggleTheme(): void {
         document.getElementById("sun")!.addEventListener("click", toggleTheme);
         root.className = "light-theme";
         localStorage.setItem("currClass", "light-theme");
+
+        if (localStorage.getItem("audioState") === "on") {
+            new Audio(switchOnAudioSrc).play();
+        }
     } else if (root.classList.contains("light-theme")) {
         document.querySelector(".menu > div:last-child > svg")!.outerHTML =
             moonSVG;
         document.getElementById("moon")!.addEventListener("click", toggleTheme);
         root.className = "dark-theme";
         localStorage.setItem("currClass", "dark-theme");
+
+        if (localStorage.getItem("audioState") === "on") {
+            new Audio(switchOffAudioSrc).play();
+        }
     }
 }
 
