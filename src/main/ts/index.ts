@@ -1,6 +1,6 @@
 import "../../common/styles/common.scss";
 import "../styles/main.scss";
-import { createMenu } from "../../common/ts/common";
+import { createMenu, loadTheme } from "../../common/ts/common";
 import homeDarkBgVid from "../assets/home_dark_bg.mp4";
 import homeLightBgVid from "../assets/home_light_bg.mp4";
 
@@ -82,9 +82,4 @@ const observer = new MutationObserver(callback);
 
 observer.observe(root, { attributes: true, attributeFilter: ["class"] });
 
-window.addEventListener("load", () => {
-    const savedClass = localStorage.getItem("currClass");
-    if (savedClass) {
-        document.documentElement.className = savedClass;
-    }
-});
+loadTheme();
