@@ -1,5 +1,5 @@
 @import "../../common/styles/themes";
-// @import "./background";
+@import "./background";
 
 @include themify($themes) {
     .menu, #projects-dropdown {
@@ -43,6 +43,10 @@ body {
     height: 100%;
 }
 
+.gradient-bg {
+    display: none;
+}
+
 .gradient-container, .container {
     position: absolute;
     color: white;
@@ -57,30 +61,10 @@ body {
     align-items: center;
     height: calc(100vh - 46px);
 
-    div {
-        
+    img {
+        display: none;
+        width: max(350px, 50%);
     }
-
-    p {
-        font-size: xx-large;
-        margin: 0;
-    }
-
-    .name {
-        font-size: 150px;
-        font-weight: 900;
-    }
-
-    .surname {
-        font-size: 75px;
-        text-align: right;
-        margin-top: -35px;
-    }
-}
-
-.varela {
-    font-family: "Varela Round", sans-serif;
-    font-style: normal;
 }
 
 
