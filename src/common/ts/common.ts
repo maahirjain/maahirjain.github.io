@@ -55,7 +55,7 @@ export function createMenu(): void {
     projectsDropdownDiv.classList.add("hide");
 
     projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
-    projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight}px`;
+    projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight + 10.5}px`;
 
     document.body.appendChild(projectsDropdownDiv);
 

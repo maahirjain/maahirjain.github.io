@@ -1,6 +1,8 @@
 import "../../common/styles/common.scss";
 import "../styles/main.scss";
 import { createMenu } from "../../common/ts/common";
+import homeDarkBgVid from "../assets/home_dark_bg.mp4";
+import homeLightBgVid from "../assets/home_light_bg.mp4";
 
 createMenu();
 
@@ -42,6 +44,10 @@ const callback = (
         ) {
             const newClass = (<HTMLElement>mutation.target).className;
             if (newClass === "light-theme") {
+                document.querySelector("source")!.src = homeLightBgVid;
+
+                (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
+
                 root.style.setProperty("--color-bg1", "#f5d7bd");
                 root.style.setProperty("--color-bg2", "#e8c9ab");
                 root.style.setProperty("--color1", "210, 168, 125");
@@ -53,6 +59,10 @@ const callback = (
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
             } else if (newClass === "dark-theme") {
+                document.querySelector("source")!.src = homeDarkBgVid;
+
+                (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
+
                 root.style.setProperty("--color-bg1", "#283e30");
                 root.style.setProperty("--color-bg2", "#395741");
                 root.style.setProperty("--color1", "73, 110, 76");
