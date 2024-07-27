@@ -76,6 +76,10 @@ body {
 
     svg {
         width: 25px;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }
 
@@ -107,6 +111,8 @@ svg {
 #home:hover {
     transform: scale(1.2);
 }
+
+
 
 #moon:hover {
     animation: swing 2s infinite;
