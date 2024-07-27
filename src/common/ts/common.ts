@@ -168,7 +168,12 @@ function audioBtnListener() {
         });
     }
 
+    if (localStorage.getItem("audioState") === null) {
+        localStorage.setItem("audioState", "on");
+    }
+
     const savedAudioState = localStorage.getItem("audioState");
+
     if (savedAudioState === "on") {
         audioOnSVG!.style.display = "block";
         audioOffSVG!.style.display = "none";
