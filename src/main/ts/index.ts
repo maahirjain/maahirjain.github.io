@@ -3,6 +3,11 @@ import "../styles/main.scss";
 import { createMenu, loadTheme } from "../../common/ts/common";
 import homeDarkBgVid from "../assets/home_dark_bg.mp4";
 import homeLightBgVid from "../assets/home_light_bg.mp4";
+import lightThemeAudioSrc from "../assets/home_light_bg_audio.mp3";
+import darkThemeAudioSrc from "../assets/home_dark_bg_audio.mp3";
+import checkboxAudioSrc from "../assets/checkbox_audio.mp3";
+
+let backgroundAudioAllowed: boolean = false;
 
 createMenu();
 
@@ -81,3 +86,116 @@ const observer = new MutationObserver(callback);
 observer.observe(root, { attributes: true, attributeFilter: ["class"] });
 
 loadTheme();
+
+const bgAudioDiv: HTMLElement | null = document.querySelector(".wrap div");
+const bgAudioBtn: HTMLElement | null = document.querySelector(".wrap input");
+
+const audioOnSVG = document.getElementById("audio-on");
+const audioOffSVG = document.getElementById("audio-off");
+const lightThemeAudio = new Audio(lightThemeAudioSrc);
+const darkThemeAudio = new Audio(darkThemeAudioSrc);
+
+lightThemeAudio.loop = true;
+darkThemeAudio.loop = true;
+
+let backgroundAudio = darkThemeAudio;
+let otherBgAudio = lightThemeAudio;
+
+if (isScreenDimensionRestricted()) {
+    bgAudioDiv!.style.display = "none";
+}
+
+bgAudioBtn?.addEventListener("change", () => allowBgAudio());
+
+function allowBgAudio() {
+    if (document.documentElement.className === "dark-theme") {
+        bgAudioDiv!.style.borderBottom = "2px solid rgb(80, 250, 123)";
+    } else {
+        bgAudioDiv!.style.borderBottom = "2px solid rgb(12, 93, 86)";
+    }
+
+    if (localStorage.getItem("audioState") === "on") {
+        new Audio(checkboxAudioSrc).play();
+    }
+
+    backgroundAudioAllowed = true;
+
+    if (
+        localStorage.getItem("audioState") === "on" &&
+        !isScreenDimensionRestricted()
+    ) {
+        backgroundAudio.play();
+        otherBgAudio.pause();
+    }
+
+    bgAudioDiv!.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 2000,
+        iterations: 1
+    });
+
+    setTimeout(function () {
+        bgAudioDiv!.style.display = "none";
+    }, 2000);
+}
+
+function playBgAudio() {
+    if (localStorage.getItem("audioState") === "on" && backgroundAudioAllowed) {
+        otherBgAudio.pause();
+        backgroundAudio.play();
+    }
+}
+
+function isScreenDimensionRestricted() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const ratio = width / height;
+    return ratio <= 1.55;
+}
+
+function updateAudioSource() {
+    const rootElement = document.documentElement;
+    const isDarkTheme = rootElement.classList.contains("dark-theme");
+    backgroundAudio = isDarkTheme ? darkThemeAudio : lightThemeAudio;
+    otherBgAudio = isDarkTheme ? lightThemeAudio : darkThemeAudio;
+}
+
+function toggleAudio(on: boolean) {
+    if (on && !isScreenDimensionRestricted()) {
+        playBgAudio();
+    } else {
+        backgroundAudio.pause();
+    }
+}
+
+function handleResize() {
+    if (isScreenDimensionRestricted()) {
+        backgroundAudio.pause();
+    } else if (audioOnSVG!.style.display === "block") {
+        playBgAudio();
+    }
+}
+
+updateAudioSource();
+playBgAudio();
+
+audioOnSVG!.addEventListener("click", () => {
+    toggleAudio(false);
+});
+
+audioOffSVG!.addEventListener("click", () => {
+    toggleAudio(true);
+});
+
+window.addEventListener("resize", () => {
+    handleResize();
+});
+
+const observer2 = new MutationObserver(() => {
+    updateAudioSource();
+    playBgAudio();
+});
+
+observer2.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"]
+});

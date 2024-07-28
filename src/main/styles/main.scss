@@ -2,7 +2,7 @@
 @import "./background";
 
 @include themify($themes) {
-    .menu, #projects-dropdown {
+    .menu, #projects-dropdown, .wrap div {
         background-color: themed(opacity) !important;
         color: white !important;
 
@@ -11,21 +11,12 @@
         }
     }
 
-    .name, .surname {
-        text-shadow: 1px 1px 1px darkgrey,
-        1px 2px 1px darkgrey,
-        1px 3px 1px darkgrey,
-        1px 4px 1px darkgrey,
-        1px 5px 1px darkgrey,
-        1px 6px 1px darkgrey,
-        1px 7px 1px darkgrey,
-        1px 8px 1px darkgrey,
-        1px 9px 1px darkgrey,
-        1px 10px 1px darkgrey,
-        1px 18px 6px rgba(16,16,16,0.4),
-        1px 22px 10px rgba(16,16,16,0.2),
-        1px 25px 35px rgba(16,16,16,0.2),
-        1px 30px 60px rgba(16,16,16,0.4);
+    .wrap div {
+        border-bottom: 2px solid themed(error); 
+
+        input {
+            accent-color: themed(tertiary);
+        }
     }
 }
 
@@ -55,6 +46,24 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.wrap {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    div {
+        font-size: 0.9rem;
+        text-align: end;
+        padding-left: 8px;
+        padding-right: 5px;
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
+.menu {
+    border-radius: 10px 10px 0px 10px;
+}
+
 .content {
     display: flex;
     justify-content: center;
@@ -66,6 +75,4 @@ body {
         width: max(350px, 50%);
     }
 }
-
-
   
