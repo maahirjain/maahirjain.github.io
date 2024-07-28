@@ -143,9 +143,12 @@ function allowBgAudio() {
 
     setTimeout(function () {
         bgAudioDiv!.style.display = "none";
+        (<HTMLInputElement>(
+            document.querySelector("input[type='checkbox']")
+        )).checked = false;
+        (<HTMLElement>document.querySelector(".menu")).style.borderRadius =
+            "10px";
     }, 2000);
-
-    (<HTMLElement>document.querySelector(".menu")).style.borderRadius = "10px";
 }
 
 function playBgAudio() {
