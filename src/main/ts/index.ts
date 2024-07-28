@@ -136,8 +136,6 @@ function allowBgAudio() {
         otherBgAudio.pause();
     }
 
-    (<HTMLElement>document.querySelector(".menu")).style.borderRadius = "10px";
-
     bgAudioDiv!.animate([{ opacity: 1 }, { opacity: 0 }], {
         duration: 2000,
         iterations: 1
@@ -146,10 +144,16 @@ function allowBgAudio() {
     setTimeout(function () {
         bgAudioDiv!.style.display = "none";
     }, 2000);
+
+    (<HTMLElement>document.querySelector(".menu")).style.borderRadius = "10px";
 }
 
 function playBgAudio() {
-    if (localStorage.getItem("audioState") === "on" && backgroundAudioAllowed) {
+    if (
+        localStorage.getItem("audioState") === "on" &&
+        backgroundAudioAllowed &&
+        !isScreenDimensionRestricted()
+    ) {
         otherBgAudio.pause();
         backgroundAudio.play();
     }
