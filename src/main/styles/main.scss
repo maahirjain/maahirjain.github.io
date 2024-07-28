@@ -75,4 +75,18 @@ body {
         width: max(350px, 50%);
     }
 }
+
+@media (max-aspect-ratio: 155/100) {
+    #homeBgVid {
+        display: none;
+    }
+
+    .gradient-bg {
+        display: block;
+    }
+
+    .content img {
+        display: block;
+    }
+}
   

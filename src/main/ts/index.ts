@@ -6,6 +6,8 @@ import homeLightBgVid from "../assets/home_light_bg.mp4";
 import lightThemeAudioSrc from "../assets/home_light_bg_audio.mp3";
 import darkThemeAudioSrc from "../assets/home_dark_bg_audio.mp3";
 import checkboxAudioSrc from "../assets/checkbox_audio.mp3";
+import hello3DLightImgSrc from "../assets/hello_3d_light.png";
+import hello3DDarkImgSrc from "../assets/hello_3d_dark.png";
 
 let backgroundAudioAllowed: boolean = false;
 
@@ -61,6 +63,9 @@ const callback = (
                 root.style.setProperty("--color-interactive", "164, 137, 113");
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
+
+                (<HTMLImageElement>document.querySelector(".content img")).src =
+                    hello3DLightImgSrc;
             } else if (newClass === "dark-theme") {
                 document.querySelector("source")!.src = homeDarkBgVid;
 
@@ -76,6 +81,9 @@ const callback = (
                 root.style.setProperty("--color-interactive", "238, 236, 232");
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
+
+                (<HTMLImageElement>document.querySelector(".content img")).src =
+                    hello3DDarkImgSrc;
             }
         }
     }
