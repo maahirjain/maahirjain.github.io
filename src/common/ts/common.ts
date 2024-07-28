@@ -16,9 +16,11 @@ export function createMenu(): void {
 
     const aboutAnchor: HTMLAnchorElement = document.createElement("a");
     aboutAnchor.textContent = "About";
+    aboutAnchor.setAttribute("href", "./about.html");
 
     const projectsAnchor: HTMLElement = document.createElement("a");
     projectsAnchor.textContent = "Projects";
+    projectsAnchor.setAttribute("href", "./featured.html");
 
     div1.innerHTML = homeSVG;
     div1.appendChild(aboutAnchor);
@@ -43,6 +45,11 @@ export function createMenu(): void {
     webAnchor.textContent = "Web";
     mobileAnchor.textContent = "Mobile";
     miscAnchor.textContent = "Misc";
+
+    featuredAnchor.setAttribute("href", "./featured.html");
+    webAnchor.setAttribute("href", "./web.html");
+    mobileAnchor.setAttribute("href", "./mobile.html");
+    miscAnchor.setAttribute("href", "./misc.html");
 
     projectsDropdownDiv.appendChild(featuredAnchor);
     projectsDropdownDiv.appendChild(webAnchor);

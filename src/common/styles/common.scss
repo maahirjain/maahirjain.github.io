@@ -73,6 +73,11 @@ body {
     }
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 #projects-menu-item {
     display: flex;
     align-items: center;
