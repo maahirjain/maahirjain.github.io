@@ -136,6 +136,8 @@ function allowBgAudio() {
         otherBgAudio.pause();
     }
 
+    (<HTMLElement>document.querySelector(".menu")).style.borderRadius = "10px";
+
     bgAudioDiv!.animate([{ opacity: 1 }, { opacity: 0 }], {
         duration: 2000,
         iterations: 1
@@ -206,4 +208,11 @@ const observer2 = new MutationObserver(() => {
 observer2.observe(document.documentElement, {
     attributes: true,
     attributeFilter: ["class"]
+});
+
+window.addEventListener("resize", () => {
+    if (!isScreenDimensionRestricted() && !backgroundAudioAllowed) {
+        (<HTMLElement>document.querySelector(".wrap div")).style.display =
+            "block";
+    }
 });

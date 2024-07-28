@@ -77,6 +77,10 @@ body {
 }
 
 @media (max-aspect-ratio: 155/100) {
+    .menu {
+        border-radius: 10px;
+    }
+
     #homeBgVid {
         display: none;
     }
@@ -88,5 +92,8 @@ body {
     .content img {
         display: block;
     }
+
+    .wrap {
+        display: none;
+    }
 }
-  
