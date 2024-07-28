@@ -149,4 +149,40 @@ svg {
     80% { transform: rotate(-5deg); } 
     100% { transform: rotate(0deg); } 
 } 
+
+@media (max-width: 680px) {
+    @include themify($themes) {
+        .menu > div {
+            background-color: themed(primary);
+        }
+    }
+
+    .dark-theme .menu, .light-theme .menu, .menu {
+        background: none !important;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 0;
+
+        > div {
+            gap: 10px;
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        > div:first-child {
+            justify-content: space-between;
+            order: 2;
+            border-radius: 10px 0px 10px 10px;
+        }
+
+        > div:last-child {
+            justify-content: center;
+            width: 100px;
+            margin-left: auto;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+}
   

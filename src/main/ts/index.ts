@@ -64,7 +64,7 @@ const callback = (
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
 
-                (<HTMLImageElement>document.querySelector(".content img")).src =
+                (<HTMLImageElement>document.querySelector("img")).src =
                     hello3DLightImgSrc;
             } else if (newClass === "dark-theme") {
                 document.querySelector("source")!.src = homeDarkBgVid;
@@ -82,7 +82,7 @@ const callback = (
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
 
-                (<HTMLImageElement>document.querySelector(".content img")).src =
+                (<HTMLImageElement>document.querySelector("img")).src =
                     hello3DDarkImgSrc;
             }
         }
