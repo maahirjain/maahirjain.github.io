@@ -53,14 +53,14 @@ const callback = (
 
                 (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
 
-                root.style.setProperty("--color-bg1", "#f5d7bd");
-                root.style.setProperty("--color-bg2", "#e8c9ab");
-                root.style.setProperty("--color1", "210, 168, 125");
-                root.style.setProperty("--color2", "190, 152, 109");
-                root.style.setProperty("--color3", "169, 132, 90");
-                root.style.setProperty("--color4", "154, 119, 79");
-                root.style.setProperty("--color5", "141, 107, 72");
-                root.style.setProperty("--color-interactive", "164, 137, 113");
+                root.style.setProperty("--color-bg1", "rgb(250, 249, 246)");
+                root.style.setProperty("--color-bg2", "rgb(238, 242, 243)");
+                root.style.setProperty("--color1", "202, 212, 216");
+                root.style.setProperty("--color2", "185, 198, 203");
+                root.style.setProperty("--color3", "167, 183, 189");
+                root.style.setProperty("--color4", "149, 168, 176");
+                root.style.setProperty("--color5", "12, 93, 86");
+                root.style.setProperty("--color-interactive", "59, 59, 59");
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
 
@@ -71,14 +71,14 @@ const callback = (
 
                 (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
 
-                root.style.setProperty("--color-bg1", "#283e30");
-                root.style.setProperty("--color-bg2", "#395741");
-                root.style.setProperty("--color1", "73, 110, 76");
-                root.style.setProperty("--color2", "88, 129, 87");
-                root.style.setProperty("--color3", "126, 153, 113");
-                root.style.setProperty("--color4", "163, 177, 138");
-                root.style.setProperty("--color5", "209, 213, 195");
-                root.style.setProperty("--color-interactive", "238, 236, 232");
+                root.style.setProperty("--color-bg1", "rgb(33, 34, 44)");
+                root.style.setProperty("--color-bg2", "rgb(0, 0, 0)");
+                root.style.setProperty("--color1", "172, 131, 229");
+                root.style.setProperty("--color2", "255, 49, 49");
+                root.style.setProperty("--color3", "80, 250, 123");
+                root.style.setProperty("--color4", "232, 232, 0");
+                root.style.setProperty("--color5", "139, 233, 253");
+                root.style.setProperty("--color-interactive", "255, 255, 255");
                 root.style.setProperty("--circle-size", "80%");
                 root.style.setProperty("--blending", "hard-light");
 

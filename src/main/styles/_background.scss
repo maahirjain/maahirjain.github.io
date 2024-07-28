@@ -1,28 +1,15 @@
 :root {
-    --color-bg1: #283e30;
-    --color-bg2: #395741;
-    --color1: 73, 110, 76;
-    --color2: 88, 129, 87;
-    --color3: 126, 153, 113;
-    --color4: 163, 177, 138;
-    --color5: 209, 213, 195;
-    --color-interactive: 238, 236, 232;
+    --color-bg1: rgb(33, 34, 44);
+    --color-bg2: rgb(0, 0, 0);
+    --color1: 172, 131, 229;
+    --color2: 139, 233, 253;
+    --color3: 80, 250, 123;
+    --color4: 232, 232, 0;
+    --color5: 255, 49, 49;
+    --color-interactive: 255, 255, 255;
     --circle-size: 80%;
     --blending: hard-light;
 }
-
-// :root {
-//     --color-bg1: #f5d7bd;
-//     --color-bg2: #e8c9ab;
-//     --color1: 210, 168, 125;
-//     --color2: 190, 152, 109;
-//     --color3: 169, 132, 90;
-//     --color4: 154, 119, 79;
-//     --color5: 141, 107, 72;
-//     --color-interactive: 164, 137, 113;
-//     --circle-size: 80%;
-//     --blending: hard-light;
-// }
 
 @keyframes moveInCircle {
     0% {
