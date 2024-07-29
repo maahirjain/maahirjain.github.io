@@ -1,0 +1,11 @@
+@import "../../../common/styles/themes";
+
+@include themify($themes) {
+    #mobile {
+        color: themed(primary);
+    }
+}
+
+#mobile {
+    opacity: 1 !important;
+}

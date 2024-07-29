@@ -1,0 +1,11 @@
+@import "../../../common/styles/themes";
+
+@include themify($themes) {
+    #featured {
+        color: themed(primary);
+    }
+}
+
+#featured {
+    opacity: 1 !important;
+}

@@ -1,0 +1,11 @@
+@import "../../../common/styles/themes";
+
+@include themify($themes) {
+    #web {
+        color: themed(primary);
+    }
+}
+
+#web {
+    opacity: 1 !important;
+}

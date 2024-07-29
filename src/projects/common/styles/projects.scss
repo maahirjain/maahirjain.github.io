@@ -1,12 +1,12 @@
-@import "../../common/styles/themes";
+@import "../../../common/styles/themes";
 
 @include themify($themes) {
-    #about {
+    #projects {
         text-decoration-color: themed(primary);
     }
 }
 
-#about {
+#projects {
     text-decoration: underline;
     text-underline-offset: 8px;
 }
