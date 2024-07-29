@@ -80,6 +80,7 @@ export function createMenu(): void {
 
     window.addEventListener("resize", () => {
         projectsDropdownDiv.style.left = `${projectsDiv.getBoundingClientRect().left - 8}px`;
+        projectsDropdownDiv.style.top = `${projectsDiv.getBoundingClientRect().top + projectsDiv.offsetHeight + 10.5}px`;
     });
 
     const dropDownSVGElement: Node | null = document.querySelector(

@@ -28,6 +28,7 @@ $pink: rgb(230, 0, 103);
 
     #projects-dropdown {
         background-color: themed(opacity);
+        color: white;
     }
 }
 
@@ -94,7 +95,7 @@ a {
 }
 
 #projects-dropdown {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: min-content;
