@@ -14,19 +14,20 @@ $pink: rgb(230, 0, 103);
     }
 
     .menu {
-        background-color: themed(primary);
+        background-color: themed(opacity);
+        color: white;
     }
 
     path {
-        fill: themed(quinary);
+        fill: white;
     }
 
     #projects-menu-item path {
-        fill: themed(text);
+        fill: white;
     }
 
     #projects-dropdown {
-        background-color: themed(primary);
+        background-color: themed(opacity);
     }
 }
 
@@ -153,7 +154,7 @@ svg {
 @media (max-width: 680px) {
     @include themify($themes) {
         .menu > div {
-            background-color: themed(primary);
+            background-color: themed(opacity);
         }
     }
 
