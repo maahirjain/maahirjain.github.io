@@ -4,10 +4,65 @@
     #about {
         text-decoration-color: themed(primary);
     }
+
+    #about-content, #animation-btn, #chess-btn {
+        background-color: themed(opacity);
+        border: 2px solid themed(text);
+    }
+
+    #hello-option, #animation-btn, #chess-btn {
+        border: 2px solid themed(text);
+    }
 }
 
 #about {
     text-decoration: underline;
     text-underline-offset: 8px;
 }
+
+#about-box {
+    display: flex;
+    width: 100%;
+}
+
+#about-content {
+    flex-grow: 1;
+    min-height: 530px;
+    border-radius: 10px;
+    margin-right: 16px;
+}
   
+#about-options {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 150px;
+    min-height: 530px;
+}
+
+#hello-option {
+    border-radius: 50%;
+}
+
+#hobbies-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+
+    > div:first-child {
+        font-size: x-large;
+        text-align: center;
+    }
+}
+
+#hello-option, #animation-btn, #chess-btn {
+    width: 100%;
+    min-height: 150px;
+}
+
+#animation-btn, #chess-btn {
+    border-radius: 10px;
+}
+
+
