@@ -26,9 +26,11 @@
 
 #about-content {
     flex-grow: 1;
-    min-height: 530px;
+    min-height: 500px;
+    max-height: 531px;
     border-radius: 10px;
     margin-right: 16px;
+    overflow: auto;
 }
   
 #about-options {
@@ -163,6 +165,7 @@
         border: none !important;
         width: 60px;
         height: 60px;
+        box-shadow: none;
     }
 }
 
