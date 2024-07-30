@@ -4,12 +4,29 @@
     #featured {
         color: themed(primary);
     }
+
+    p {
+        background-color: themed(secondary);
+        color: themed(contrast);
+    }
 }
 
 #featured {
     opacity: 1 !important;
 }
 
-.grid > div {
+.grid > div:first-child {
     height: 500px;
+    position: relative;
+    overflow: visible;
+    border-radius: 10px 0px 10px 10px;
+}
+
+p {
+    position: absolute;
+    top: -32px;
+    right: -2px;
+    padding: 4px 8px 4px;
+    margin: 0;
+    border-radius: 10px 10px 0px 0px;
 }
