@@ -53,6 +53,19 @@
     grid-column: 1 / -1;
 }
 
+.project-img {
+    width: 550px;
+    padding: 32px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        border: 1px solid white;
+        border-radius: 10px;
+        object-fit: contain;
+    }
+}
+
 .carousel-container {
     display: flex;
     flex-direction: column;
@@ -83,8 +96,9 @@
 .item {
     display: block;
     position: absolute;
+    aspect-ratio: 16 / 9;
     width: 240px;
-    height: 135px;
+    height: auto;
     text-align: center;
     color: #FFF;
     border-radius: 10px;
@@ -225,6 +239,11 @@ h2 {
         --radius: 30vw;
     }
 
+    .project-img {
+        padding: 8px;
+        width: 100%;
+    }
+
     .carousel-container {
         width: 100%;
     }
@@ -234,9 +253,7 @@ h2 {
     }
 
     .item {
-        aspect-ratio: 16 / 9;
         width: 50%;
-        height: auto;
     }
 }
 
