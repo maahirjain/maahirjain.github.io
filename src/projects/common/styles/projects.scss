@@ -1,5 +1,13 @@
 @import "../../../common/styles/themes";
 
+$rotation-a: 0deg;
+$rotation-b: 60deg;
+$rotation-c: 120deg;
+$rotation-d: 180deg;
+$rotation-e: 240deg;
+$rotation-f: 300deg;
+$radius: 90px;
+
 @include themify($themes) {
     #projects {
         text-decoration-color: themed(primary);
@@ -27,9 +35,11 @@
     width: 100%;
 
     > div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         color: white;
         height: 300px;
-        padding: 16px;
         border-radius: 10px;
         overflow: auto;
     }
@@ -37,4 +47,110 @@
 
 .full-row {
     grid-column: 1 / -1;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.img-container {
+    display: flex;
+    margin: 84px 0 0;
+    width: 210px;
+    height: 65px;
+    perspective: 1000px;
+    transform: scale(2.5);
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.item {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 56.25px;
+    text-align: center;
+    color: #FFF;
+    border: 1px solid white;
+    border-radius: 10px;
+    transform: scale(2.5);
+}
+
+.carousel-btns {
+    margin: 0 0 36px;
+
+    button {
+        font-size: 1.5rem;
+        border-radius: 10px;
+    }
+}
+
+.a {
+    transform: rotateY($rotation-a) translateZ($radius);
+}
+.b {
+    transform: rotateY($rotation-b) translateZ($radius);
+}
+.c {
+    transform: rotateY($rotation-c) translateZ($radius);
+}
+.d {
+    transform: rotateY($rotation-d) translateZ($radius);
+}
+.e {
+    transform: rotateY($rotation-e) translateZ($radius);
+} 
+.f {
+    transform: rotateY($rotation-f) translateZ($radius);
+}
+
+.project-info {
+    padding: 32px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    width: 50%;
+}
+
+h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.project-text {
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 120px;
+    overflow: auto;
+}
+
+.project-btn-container {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        border-radius: 10px;
+        height: 42px;
+
+        path {
+            fill: black;
+        }
+    }
 }
