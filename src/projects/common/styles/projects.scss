@@ -1,12 +1,14 @@
 @import "../../../common/styles/themes";
 
-$rotation-a: 0deg;
-$rotation-b: 60deg;
-$rotation-c: 120deg;
-$rotation-d: 180deg;
-$rotation-e: 240deg;
-$rotation-f: 300deg;
-$radius: 216px;
+:root {
+    --rotation-a: 0deg;
+    --rotation-b: 60deg;
+    --rotation-c: 120deg;
+    --rotation-d: 180deg;
+    --rotation-e: 240deg;
+    --rotation-f: 300deg;
+    --radius: 216px;
+}
 
 @include themify($themes) {
     #projects {
@@ -90,22 +92,22 @@ $radius: 216px;
 }
 
 .a {
-    transform: rotateY($rotation-a) translateZ($radius);
+    transform: rotateY(var(--rotation-a)) translateZ(var(--radius));
 }
 .b {
-    transform: rotateY($rotation-b) translateZ($radius);
+    transform: rotateY(var(--rotation-b)) translateZ(var(--radius));
 }
 .c {
-    transform: rotateY($rotation-c) translateZ($radius);
+    transform: rotateY(var(--rotation-c)) translateZ(var(--radius));
 }
 .d {
-    transform: rotateY($rotation-d) translateZ($radius);
+    transform: rotateY(var(--rotation-d)) translateZ(var(--radius));
 }
 .e {
-    transform: rotateY($rotation-e) translateZ($radius);
+    transform: rotateY(var(--rotation-e)) translateZ(var(--radius));
 } 
 .f {
-    transform: rotateY($rotation-f) translateZ($radius);
+    transform: rotateY(var(--rotation-f)) translateZ(var(--radius));
 }
 
 .project-info {
@@ -209,5 +211,43 @@ h2 {
 
     .project-text {
         margin-top: 16px;
+    }
+}
+
+@media (max-width: 735px) {
+    :root {
+        --radius: 30vw;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+
+    .img-container {
+        width: 100%;
+    }
+
+    .item {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media (max-width: 584px) {
+    :root {
+        --radius: 28vw;
+    }
+
+    .title-1 {
+        margin-bottom: 0;
+    }
+
+    .carousel-btns {
+        margin-top: 0;
+    }
+
+    .project-info {
+        width: 100%;
+        min-width: min-content;
     }
 }
