@@ -14,6 +14,7 @@ const animationBtn = document.getElementById("animation-btn");
 const chessBtn = document.getElementById("chess-btn");
 
 const donutVideoElement = document.createElement("video");
+donutVideoElement.muted = true;
 
 const donutSourceMP4 = document.createElement("source");
 donutSourceMP4.src = donutPRORES;
@@ -29,6 +30,7 @@ donutVideoElement.appendChild(donutSourceWEBM);
 animationBtn?.appendChild(donutVideoElement);
 
 const pawnVideoElement = document.createElement("video");
+pawnVideoElement.muted = true;
 
 const pawnSourceMP4 = document.createElement("source");
 pawnSourceMP4.src = pawnPRORES;
@@ -72,7 +74,7 @@ function select(option: string) {
         donutVideoElement.play();
         pawnVideoElement.loop = false;
         pawnVideoElement.pause();
-        helloOption!.style.animation = "";
+        helloOption!.style.animation = "none";
     } else if (option === "chess") {
         chessBtn?.classList.add("selected");
         animationBtn?.classList.remove("selected");
@@ -82,7 +84,7 @@ function select(option: string) {
         pawnVideoElement.play();
         donutVideoElement.loop = false;
         donutVideoElement.pause();
-        helloOption!.style.animation = "";
+        helloOption!.style.animation = "none";
     } else {
         helloOption?.classList.add("selected");
         chessBtn?.classList.remove("selected");
