@@ -51,12 +51,14 @@ body {
 
 .menu {
     position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 8px;
     border-radius: 10px;
     margin-top: 16px;
+    z-index: 3;
 
     > div {
         display: flex;
@@ -95,12 +97,13 @@ a {
 }
 
 #projects-dropdown {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     width: min-content;
     padding: 8px;
     border-radius: 0px 0px 10px 10px;
+    z-index: 3;
 
     a {
         opacity: 75%;

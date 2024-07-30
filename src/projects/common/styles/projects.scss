@@ -7,7 +7,18 @@
     --rotation-d: 180deg;
     --rotation-e: 240deg;
     --rotation-f: 300deg;
+}
+
+.full-row {
     --radius: 216px;
+}
+
+.small {
+    --radius: 30vw;
+}
+
+.x-small {
+    --radius: 28vw;
 }
 
 @include themify($themes) {
@@ -198,6 +209,48 @@ h2 {
     background: white;
 }
 
+@mixin small-project-div {
+    .project-img {
+        padding: 8px;
+        width: 100%;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+
+    .img-container {
+        width: 100%;
+    }
+
+    .item {
+        width: 50%;
+    }
+}
+
+@mixin x-small-project-div {
+    .title-1 {
+        margin-bottom: 0;
+    }
+
+    .carousel-btns {
+        margin-top: 0;
+    }
+
+    .project-info {
+        width: 100%;
+        min-width: min-content;
+    }
+}
+
+.small {
+    @include small-project-div;
+}
+
+.x-small {
+    @include x-small-project-div;
+}
+
 @media (max-width: 1172px) {
     .grid > div {
         flex-direction: column;
@@ -235,43 +288,15 @@ h2 {
 }
 
 @media (max-width: 735px) {
-    :root {
+    .full-row {
         --radius: 30vw;
-    }
-
-    .project-img {
-        padding: 8px;
-        width: 100%;
-    }
-
-    .carousel-container {
-        width: 100%;
-    }
-
-    .img-container {
-        width: 100%;
-    }
-
-    .item {
-        width: 50%;
+        @include small-project-div;
     }
 }
 
 @media (max-width: 584px) {
-    :root {
+    .full-row {
         --radius: 28vw;
-    }
-
-    .title-1 {
-        margin-bottom: 0;
-    }
-
-    .carousel-btns {
-        margin-top: 0;
-    }
-
-    .project-info {
-        width: 100%;
-        min-width: min-content;
+        @include x-small-project-div;
     }
 }
