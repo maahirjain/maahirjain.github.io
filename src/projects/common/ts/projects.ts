@@ -4,6 +4,7 @@ const smallDivArr: HTMLElement[] = Array.from(
 
 function checkDivWidth(div: HTMLElement) {
     const divWidth = div.offsetWidth;
+    div.style.setProperty("--width", `${divWidth}px`);
 
     if (divWidth <= 438) {
         div.classList.remove("small");
@@ -15,11 +16,6 @@ function checkDivWidth(div: HTMLElement) {
 }
 
 smallDivArr.forEach((div) => {
-    const observer = new MutationObserver(() => {
-        checkDivWidth(div);
-    });
-    observer.observe(div, { attributes: true, childList: true, subtree: true });
-
     checkDivWidth(div);
 
     window.addEventListener("resize", () => {
