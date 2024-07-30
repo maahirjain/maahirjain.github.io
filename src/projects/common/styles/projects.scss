@@ -4,6 +4,15 @@
     #projects {
         text-decoration-color: themed(primary);
     }
+
+    .grid > div {
+        background-color: themed(opacity);
+        border: 2px solid themed(text);
+    }
+
+    .featured {
+        background-color: themed(primary);
+    }
 }
 
 #projects {
@@ -11,3 +20,21 @@
     text-underline-offset: 8px;
 }
   
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    width: 100%;
+
+    > div {
+        color: white;
+        height: 300px;
+        padding: 16px;
+        border-radius: 10px;
+        overflow: auto;
+    }
+}
+
+.full-row {
+    grid-column: 1 / -1;
+}
