@@ -1,12 +1,12 @@
 @import "../../../common/styles/themes";
 
 :root {
-    --rotation-a: 0deg;
-    --rotation-b: 60deg;
-    --rotation-c: 120deg;
-    --rotation-d: 180deg;
-    --rotation-e: 240deg;
-    --rotation-f: 300deg;
+    --rotation-1: -60deg;
+    --rotation-2: 0deg;
+    --rotation-3: 60deg;
+    --rotation-4: 120deg;
+    --rotation-5: 180deg;
+    --rotation-6: 240deg;
 }
 
 .full-row {
@@ -139,22 +139,22 @@
 }
 
 .a {
-    transform: rotateY(var(--rotation-a)) translateZ(var(--radius));
+    transform: rotateY(var(--rotation-1)) translateZ(var(--radius));
 }
 .b {
-    transform: rotateY(var(--rotation-b)) translateZ(var(--radius));
+    transform: rotateY(var(--rotation-2)) translateZ(var(--radius));
 }
 .c {
-    transform: rotateY(var(--rotation-c)) translateZ(var(--radius));
+    transform: rotateY(var(--rotation-3)) translateZ(var(--radius));
 }
 .d {
-    transform: rotateY(var(--rotation-d)) translateZ(var(--radius));
+    transform: rotateY(var(--rotation-4)) translateZ(var(--radius));
 }
 .e {
-    transform: rotateY(var(--rotation-e)) translateZ(var(--radius));
+    transform: rotateY(var(--rotation-5)) translateZ(var(--radius));
 } 
 .f {
-    transform: rotateY(var(--rotation-f)) translateZ(var(--radius));
+    transform: rotateY(var(--rotation-6)) translateZ(var(--radius));
 }
 
 .project-info {
