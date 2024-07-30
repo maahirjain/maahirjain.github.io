@@ -21,6 +21,10 @@ $radius: 90px;
     .featured {
         background-color: themed(primary);
     }
+
+    .project-text {
+        border: 2px solid themed(text);
+    }
 }
 
 #projects {
@@ -36,11 +40,10 @@ $radius: 90px;
 
     > div {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         color: white;
-        height: 300px;
         border-radius: 10px;
+        min-height: 300px;
         overflow: auto;
     }
 }
@@ -90,11 +93,6 @@ $radius: 90px;
 
 .carousel-btns {
     margin: 0 0 32px;
-
-    button {
-        font-size: 1.5rem;
-        border-radius: 10px;
-    }
 }
 
 .a {
@@ -130,7 +128,6 @@ h2 {
 
 .project-text {
     padding: 8px;
-    border: 2px solid black;
     border-radius: 10px;
     height: 120px;
     overflow: auto;
@@ -139,24 +136,11 @@ h2 {
 .project-btn-container {
     display: flex;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 24px;
     gap: 8px;
-
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
-        border-radius: 10px;
-
-        path {
-            fill: black;
-        }
-    }
 }
 
 .pushable {
-    background: black;
     border-radius: 12px;
     border: none;
     padding: 0;
@@ -166,14 +150,29 @@ h2 {
 
 .front {
     display: block;
-    padding: 8px 20px;
-    border-radius: 12px;
-    font-size: 1.25rem;
     background: white;
-    color: black;
+    padding: 6px 15px;
+    border-radius: 12px;
+    font-size: 1rem;
     transform: translateY(-6px);
 }
 
 .pushable:active .front {
     transform: translateY(-2px);
+}
+
+.dark-theme .pushable {
+    background: black;
+}
+
+.light-theme .pushable {
+    background: rgb(59, 59, 59);
+}
+
+.dark-theme .front {
+    background: rgb(139, 233, 253);
+}
+
+.light-theme .front {
+    background: white;
 }
