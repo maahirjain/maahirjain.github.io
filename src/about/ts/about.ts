@@ -44,14 +44,26 @@ pawnVideoElement.appendChild(pawnSourceMP4);
 pawnVideoElement.appendChild(pawnSourceWEBM);
 chessBtn?.appendChild(pawnVideoElement);
 
+helloOption?.addEventListener("mouseover", () => {
+    helloOption.style.animation = "wave 2.1s 0.6s infinite";
+});
+
+helloOption?.addEventListener("mouseout", () => {
+    if (!helloOption.classList.contains("selected")) {
+        helloOption.style.animation = "none";
+    }
+});
+
 animationBtn?.addEventListener("mouseover", () => {
     donutVideoElement.loop = true;
     donutVideoElement.play();
 });
 
 animationBtn?.addEventListener("mouseout", () => {
-    donutVideoElement.loop = false;
-    donutVideoElement.pause();
+    if (!animationBtn.classList.contains("selected")) {
+        donutVideoElement.loop = false;
+        donutVideoElement.pause();
+    }
 });
 
 chessBtn?.addEventListener("mouseover", () => {
@@ -60,8 +72,10 @@ chessBtn?.addEventListener("mouseover", () => {
 });
 
 chessBtn?.addEventListener("mouseout", () => {
-    pawnVideoElement.loop = false;
-    pawnVideoElement.pause();
+    if (!chessBtn.classList.contains("selected")) {
+        pawnVideoElement.loop = false;
+        pawnVideoElement.pause();
+    }
 });
 
 function select(option: string) {
