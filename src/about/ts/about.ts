@@ -148,6 +148,44 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-const learningDiv = document.querySelector(".learning");
-const creatingDiv = document.querySelector(".creating");
-const sharingDiv = document.querySelector(".sharing");
+const learningDiv: HTMLElement | null = document.querySelector(".learning");
+const creatingDiv: HTMLElement | null = document.querySelector(".creating");
+const sharingDiv: HTMLElement | null = document.querySelector(".sharing");
+
+function getActiveDiv() {
+    if (learningDiv?.classList.contains("active")) {
+        return learningDiv;
+    } else if (creatingDiv?.classList.contains("active")) {
+        return creatingDiv;
+    } else {
+        return sharingDiv;
+    }
+}
+
+function sliderChange(div: HTMLElement) {
+    const activeDiv = getActiveDiv();
+
+    if (div != activeDiv) {
+        (<HTMLElement>div.querySelector(".content")).style.display = "block";
+        (<HTMLElement>activeDiv?.querySelector(".content")).style.display =
+            "none";
+
+        div.classList.remove("inactive");
+        div.classList.add("active");
+
+        activeDiv?.classList.remove("active");
+        activeDiv?.classList.add("inactive");
+    }
+}
+
+learningDiv?.addEventListener("click", () => {
+    sliderChange(learningDiv);
+});
+
+creatingDiv?.addEventListener("click", () => {
+    sliderChange(creatingDiv);
+});
+
+sharingDiv?.addEventListener("click", () => {
+    sliderChange(sharingDiv);
+});

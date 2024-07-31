@@ -59,7 +59,6 @@
 .slider-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
 
     > div {
@@ -85,10 +84,14 @@
 }
 
 .inactive {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    // writing-mode: vertical-rl;
+    // text-orientation: upright;
     justify-content: center;
     flex: 1;
+
+    h2 {
+        transform: rotate(90deg);
+    }
 
     .content {
         display: none;
@@ -186,6 +189,18 @@ video {
     }
   }
 
+@media (max-width: 1172px) {
+    .slider-container {
+        flex-direction: column;
+    }
+
+    .inactive {
+        h2 {
+            transform: rotate(0deg);
+        }
+    }
+}
+
 @media (max-width: 800px) {
     #about-box {
         flex-direction: column;
@@ -244,14 +259,6 @@ video {
         width: 60px;
         height: 60px;
         box-shadow: none;
-    }
-
-    .slider-container {
-        flex-direction: column;
-    }
-
-    .inactive {
-        writing-mode: horizontal-tb;
     }
 }
 
