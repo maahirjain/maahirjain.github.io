@@ -30,23 +30,31 @@ const divArr: HTMLElement[] = Array.from(
     document.querySelector(".grid")!.querySelectorAll(":scope > div")
 );
 
+console.log(divArr);
+
 const currDivArr: number[] = [];
-let index = -1;
+let index = 0;
+
+divArr.forEach((div) => {
+    if (div.querySelector(".carousel") != null) {
+        div.dataset.index = "" + index;
+        index++;
+    }
+});
 
 divArr.forEach((div) => {
     if (div.querySelector(".carousel") != null) {
         currDivArr.push(2);
-        index++;
 
         const nextBtn = div.querySelector(".next");
         const prevBtn = div.querySelector(".prev");
 
         nextBtn?.addEventListener("click", () => {
-            rotate("next", div, index);
+            rotate("next", div, +div.dataset.index!);
         });
 
         prevBtn?.addEventListener("click", () => {
-            rotate("prev", div, index);
+            rotate("prev", div, +div.dataset.index!);
         });
     }
 });
