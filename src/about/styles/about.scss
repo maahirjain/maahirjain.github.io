@@ -25,6 +25,21 @@
     .sharing {
         background-color: themed(tertiary);
     }
+
+    .media {
+        path {
+            fill: themed(text);
+        }
+    }
+
+    .speech {
+        background-color: themed(text);
+        color: themed(contrast);
+
+        &::after {
+            border-top-color: themed(text);
+        }
+    }
 }
 
 #about {
@@ -84,8 +99,6 @@
 }
 
 .inactive {
-    // writing-mode: vertical-rl;
-    // text-orientation: upright;
     justify-content: center;
     flex: 1;
 
@@ -95,6 +108,36 @@
 
     .content {
         display: none;
+    }
+}
+
+.media {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    row-gap: 8px;
+    margin-top: 32px;
+
+    svg {
+        width: 100%;
+    }
+}
+
+.speech {
+    position: relative;
+    grid-column: 1 / 4;
+    text-align: center;
+    padding: 4px;
+    border-radius: 10px;
+
+    &::after {
+        position: absolute;
+        left: calc(50% - 15px);
+        bottom: -15px; 
+        display: block; 
+        content: "";
+        width: 0; 
+        border: 15px solid transparent;
+        border-bottom: 0;
     }
 }
   
@@ -261,5 +304,3 @@ video {
         box-shadow: none;
     }
 }
-
-

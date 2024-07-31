@@ -189,3 +189,18 @@ creatingDiv?.addEventListener("click", () => {
 sharingDiv?.addEventListener("click", () => {
     sliderChange(sharingDiv);
 });
+
+document.getElementById("github-icon")?.addEventListener("click", () => {
+    window.open("https://github.com/maahirjain", "_blank");
+});
+
+document.getElementById("gmail-icon")?.addEventListener("click", () => {
+    window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=jainmaahir1@gmail.com",
+        "_blank"
+    );
+});
+
+document.getElementById("linkedin-icon")?.addEventListener("click", () => {
+    window.open("https://linkedin.com/in/maahirjain/", "_blank");
+});
