@@ -34,7 +34,22 @@
                         <h2 class="title-2">Track Velocity from Video</h2>
 
                         <div class="project-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint reprehenderit doloribus, voluptatem tempora quas natus, assumenda odio quasi reiciendis ducimus tempore sed consequatur unde ipsam beatae! Voluptas fuga est aut architecto quasi vero error. Quaerat sequi recusandae aperiam autem eum. Ullam voluptates, dolorem recusandae fugit tenetur illo corporis fuga eum. Eligendi facere ut id, distinctio temporibus modi laborum porro, ab similique tempore dolorum ipsum fugiat nostrum sed quod esse adipisci earum quidem exercitationem praesentium. Cum voluptate molestias tenetur mollitia praesentium voluptatem similique quibusdam totam aperiam fuga quas vitae quae amet nulla doloremque officiis, corrupti distinctio temporibus nostrum provident ipsum esse!
+                            The project uses machine learning to track an athlete's velocity and acceleration from a video of their sprint. The project uses <a href="https://github.com/google-ai-edge/mediapipe" target="_blank" rel="noopener noreferrer">Mediapipe</a> to identify pose landmarks, whose incremental change in x-position is used to compute velocity and acceleration over time.
+
+                            <p>The project takes as input a single video, and generates four outputs:
+                                <ul>
+                                    <li>the athlete's velocity-time graph</li>
+                                    <li>the athlete's acceleration-time graph</li>
+                                    <li>an Excel file with the athlete's velocity and acceleration at consistent time increments</li>
+                                    <li>a folder of video frames with the overlaid pose landmarks</li>
+                                </ul>
+                            </p>
+
+                            <p>To run the project, add the input video, titled <code>input.mp4</code>, in the same directory as the Jupyter notebook <code>TrackVelocity.ipynb</code>. Then simply run all the cells in the notebook. An <code>output</code> folder will be created containing the overlaid <code>frames</code>, <code>output_velocity_graph.png</code>, <code>output_acceleration_graph.png</code>, and <code>output_data.xlsx</code>.</p>
+
+                            <p>Additionally, one may note that the notebook contains a parameter <code>frame_width_scale_meters</code>, which indicates the real-world length that corresponds to the width of one video frame, in meters. The value of this parameter may be changed to get results with accurate units.</p>
+
+                            <p>I completed this project as part of a research team at Georgia Tech (Sports Performance Intelligence Platforms).</p>
                         </div>
     
                         <div class="project-btn-container">
@@ -68,7 +83,7 @@
                         <h2 class="title-2">Travel Management System</h2>
 
                         <div class="project-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint reprehenderit doloribus, voluptatem tempora quas natus, assumenda odio quasi reiciendis ducimus tempore sed consequatur unde ipsam beatae! Voluptas fuga est aut architecto quasi vero error. Quaerat sequi recusandae aperiam autem eum. Ullam voluptates, dolorem recusandae fugit tenetur illo corporis fuga eum. Eligendi facere ut id, distinctio temporibus modi laborum porro, ab similique tempore dolorum ipsum fugiat nostrum sed quod esse adipisci earum quidem exercitationem praesentium. Cum voluptate molestias tenetur mollitia praesentium voluptatem similique quibusdam totam aperiam fuga quas vitae quae amet nulla doloremque officiis, corrupti distinctio temporibus nostrum provident ipsum esse!
+                            A travel management system for tracking expenses, managing an itinerary, journalling, storing contacts, and interacting with Maps and Camera.
                         </div>
     
                         <div class="project-btn-container">
@@ -90,7 +105,7 @@
                         <h2 class="title-2">Cool LaTeX Template</h2>
 
                         <div class="project-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint reprehenderit doloribus, voluptatem tempora quas natus, assumenda odio quasi reiciendis ducimus tempore sed consequatur unde ipsam beatae! Voluptas fuga est aut architecto quasi vero error. Quaerat sequi recusandae aperiam autem eum. Ullam voluptates, dolorem recusandae fugit tenetur illo corporis fuga eum. Eligendi facere ut id, distinctio temporibus modi laborum porro, ab similique tempore dolorum ipsum fugiat nostrum sed quod esse adipisci earum quidem exercitationem praesentium. Cum voluptate molestias tenetur mollitia praesentium voluptatem similique quibusdam totam aperiam fuga quas vitae quae amet nulla doloremque officiis, corrupti distinctio temporibus nostrum provident ipsum esse!
+                            A cool LaTeX template for completing homework assignments, with both light mode and dark mode options.
                         </div>
     
                         <div class="project-btn-container">
