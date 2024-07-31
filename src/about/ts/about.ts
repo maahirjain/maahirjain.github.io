@@ -5,6 +5,8 @@ import donutVP9 from "../assets/donut_VP9.webm";
 import donutPRORES from "../assets/donut_PRORES.mov";
 import pawnVP9 from "../assets/pawn_VP9.webm";
 import pawnPRORES from "../assets/pawn_PRORES.mov";
+import donutBlender from "../assets/blender_donut_animation.mp4";
+import vendingMachineBlender from "../assets/blender_vending_machine.png";
 
 createMenu();
 loadTheme();
@@ -160,17 +162,23 @@ function load(option: string) {
         <div class="slider-container">
             <div class="learning active">
                 <h2>LEARNING</h2>
-                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore. Iusto accusantium officia itaque reiciendis iure recusandae, impedit optio, incidunt sit obcaecati labore ipsum ullam dolorem distinctio? Nesciunt quaerat vero repellat ratione nobis, sed debitis eaque sapiente. Sequi at, eos deserunt eaque quis beatae ut veritatis explicabo, nobis quo, est reprehenderit adipisci. Veritatis nobis dolorem quaerat ab dignissimos sit corporis sunt explicabo. Quidem numquam porro eius, provident culpa fugit error nesciunt dicta assumenda omnis facere aspernatur voluptatem nostrum, quam corrupti adipisci quia tempore id molestiae repudiandae quae esse iste quo asperiores. Dicta quam quia quae possimus quod quisquam incidunt ipsam.</div>
+                <div class="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore. Iusto accusantium officia itaque reiciendis iure recusandae, impedit optio, incidunt sit obcaecati labore ipsum ullam dolorem distinctio? Nesciunt quaerat vero repellat ratione nobis, sed debitis eaque sapiente. Sequi at, eos deserunt eaque quis beatae ut veritatis explicabo, nobis quo, est reprehenderit adipisci. Veritatis nobis dolorem quaerat ab dignissimos sit corporis sunt explicabo. Quidem numquam porro eius, provident culpa fugit error nesciunt dicta assumenda omnis facere aspernatur voluptatem nostrum, quam corrupti adipisci quia tempore id molestiae repudiandae quae esse iste quo asperiores. Dicta quam quia quae possimus quod quisquam incidunt ipsam.
+                </div>
             </div>
 
             <div class="creating inactive">
                 <h2>CREATING</h2>
-                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed quis, dolorum consequatur animi tempore iusto eligendi quia modi error nostrum deserunt ipsa suscipit! Alias aliquid maxime iusto labore temporibus eos, a fuga natus officiis tenetur consectetur consequatur assumenda at ipsum corrupti officia numquam? Rerum excepturi dolorum eveniet doloribus fugiat quae dolore dolorem pariatur nam est, minima commodi optio maxime in magni harum odio delectus iure. Nobis nam praesentium sint amet at vel adipisci placeat quae labore culpa, exercitationem ullam. Obcaecati quisquam labore ipsum accusantium aperiam, odio dolore? Qui minus deleniti officiis tempora. Aperiam odit porro nisi iure atque culpa?</div>
+                <div class="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed quis, dolorum consequatur animi tempore iusto eligendi quia modi error nostrum deserunt ipsa suscipit! Alias aliquid maxime iusto labore temporibus eos, a fuga natus officiis tenetur consectetur consequatur assumenda at ipsum corrupti officia numquam? Rerum excepturi dolorum eveniet doloribus fugiat quae dolore dolorem pariatur nam est, minima commodi optio maxime in magni harum odio delectus iure. Nobis nam praesentium sint amet at vel adipisci placeat quae labore culpa, exercitationem ullam. Obcaecati quisquam labore ipsum accusantium aperiam, odio dolore? Qui minus deleniti officiis tempora. Aperiam odit porro nisi iure atque culpa?
+                </div>
             </div>
 
             <div class="sharing inactive">
                 <h2>SHARING</h2>
-                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed modi debitis sequi hic laudantium, delectus perspiciatis sunt rem doloribus voluptatibus tempore eveniet officiis incidunt excepturi voluptatum qui, ratione, expedita minima! Nobis dolor quia ducimus hic ipsum necessitatibus quae perferendis cupiditate praesentium sequi, consequuntur nostrum voluptates error minima vero accusamus itaque, aut iure possimus. Ut quia voluptas exercitationem nemo tenetur, eos fugiat inventore. Doloremque adipisci nobis saepe sed ut fugiat tenetur velit error id culpa eos consequuntur quisquam, quam, facilis minima dolor amet non! Optio unde nihil veniam suscipit ducimus, sit est aliquam culpa ut deleniti facilis quis esse asperiores natus.</div>
+                <div class="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed modi debitis sequi hic laudantium, delectus perspiciatis sunt rem doloribus voluptatibus tempore eveniet officiis incidunt excepturi voluptatum qui, ratione, expedita minima! Nobis dolor quia ducimus hic ipsum necessitatibus quae perferendis cupiditate praesentium sequi, consequuntur nostrum voluptates error minima vero accusamus itaque, aut iure possimus. Ut quia voluptas exercitationem nemo tenetur, eos fugiat inventore. Doloremque adipisci nobis saepe sed ut fugiat tenetur velit error id culpa eos consequuntur quisquam, quam, facilis minima dolor amet non! Optio unde nihil veniam suscipit ducimus, sit est aliquam culpa ut deleniti facilis quis esse asperiores natus.
+                </div>
             </div>
         </div>
 
@@ -251,4 +259,11 @@ function load(option: string) {
     }
 }
 
-load("hello");
+// load("hello");
+
+const animationImgContainer = document.querySelector(
+    ".animation-img-container"
+);
+
+animationImgContainer!.querySelector("video")!.src = donutBlender;
+animationImgContainer!.querySelector("img")!.src = vendingMachineBlender;
