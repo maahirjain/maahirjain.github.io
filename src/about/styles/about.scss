@@ -8,6 +8,14 @@
     #about-content, #animation-btn, #chess-btn {
         background-color: themed(opacity);
         border: 2px solid themed(text);
+
+        a {
+            color: themed(tertiary);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     #hello-option {
@@ -156,7 +164,8 @@
     }
 
     p {
-        padding: 8px;
+        padding: 0 16px 0;
+        text-align: center;
     }
 }
   
