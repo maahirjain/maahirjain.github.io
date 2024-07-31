@@ -43,6 +43,10 @@
 
         a {
             color: themed(tertiary);
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

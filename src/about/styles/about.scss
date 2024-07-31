@@ -13,6 +13,18 @@
     #hello-option {
         border: 2px solid themed(text);
     }
+
+    .learning {
+        background-color: themed(primary);
+    }
+
+    .creating {
+        background-color: themed(senary);
+    }
+
+    .sharing {
+        background-color: themed(tertiary);
+    }
 }
 
 #about {
@@ -28,9 +40,58 @@
     flex-grow: 1;
     min-height: 500px;
     max-height: 531px;
+    padding: 32px;
     border-radius: 10px;
     margin-right: 16px;
+    line-height: 1.5;
     overflow: auto;
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.gt {
+    color: rgb(179, 163, 105);
+    font-weight: bold;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.content {
+    margin-top: 8px;
+    padding: 0;
+}
+
+.active {
+    flex: 5;
+}
+
+.inactive {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    justify-content: center;
+    flex: 1;
+
+    .content {
+        display: none;
+    }
 }
   
 #about-options {
