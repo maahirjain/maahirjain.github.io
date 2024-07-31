@@ -147,3 +147,7 @@ document.addEventListener("keydown", (e) => {
         }
     }
 });
+
+const learningDiv = document.querySelector(".learning");
+const creatingDiv = document.querySelector(".creating");
+const sharingDiv = document.querySelector(".sharing");

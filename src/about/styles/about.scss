@@ -59,6 +59,7 @@
 .slider-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
 
     > div {
@@ -243,6 +244,14 @@ video {
         width: 60px;
         height: 60px;
         box-shadow: none;
+    }
+
+    .slider-container {
+        flex-direction: column;
+    }
+
+    .inactive {
+        writing-mode: horizontal-tb;
     }
 }
 
