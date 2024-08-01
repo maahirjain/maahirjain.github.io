@@ -8,13 +8,13 @@
     #about-content, #animation-btn, #chess-btn {
         background-color: themed(opacity);
         border: 2px solid themed(text);
+    }
 
-        a {
-            color: themed(tertiary);
+    #animation-btn a {
+        color: themed(tertiary);
 
-            &:hover {
-                text-decoration: underline;
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
 
@@ -47,6 +47,16 @@
         &::after {
             border-top-color: themed(text);
         }
+    }
+
+    .chesscom > div:first-child {
+        background-color: themed(tertiary);
+        color: themed(contrast);
+    }
+
+    .lichess > div:first-child {
+        background-color: themed(secondary);
+        color: themed(contrast);
     }
 }
 
@@ -167,6 +177,58 @@
         padding: 0 16px 0;
         text-align: center;
     }
+}
+
+.chess-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: large;
+
+    > div {
+        display: grid;
+        justify-content: center;
+        align-content: space-between;
+        padding: 16px;
+        grid-template-columns: repeat(3, 33.33%);
+        grid-template-rows: repeat(3, min-content);
+        gap: 8px;
+        border-radius: 10px;
+
+        > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+            color: black;
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px black;
+        }
+    }
+}
+
+.chesscom {
+    flex: 3;
+}
+
+.lichess {
+    flex: 1;
+}
+
+.full-row {
+    grid-column: 1 / -1;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.number {
+    font-size: larger;
+    font-weight: bold;
 }
   
 #about-options {
@@ -330,5 +392,15 @@
         width: 60px;
         height: 60px;
         box-shadow: none;
+    }
+}
+
+@media (max-width: 472px) {
+    .chess-stats-container {
+        flex-direction: column;
+
+        > div > div {
+            grid-column: 1 / -1;
+        }
     }
 }
