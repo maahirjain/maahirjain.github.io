@@ -393,6 +393,10 @@
         height: 60px;
         box-shadow: none;
     }
+
+    .animation-img-container {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 472px) {

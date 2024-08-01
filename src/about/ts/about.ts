@@ -98,6 +98,8 @@ function select(option: string) {
         animationBtn?.classList.remove("selected");
         helloOption?.classList.remove("selected");
 
+        load("chess");
+
         pawnVideoElement.loop = true;
         pawnVideoElement.play();
         donutVideoElement.loop = false;
@@ -283,7 +285,28 @@ function load(option: string) {
         animationImgContainer!.querySelector("video")!.src = donutBlender;
         animationImgContainer!.querySelector("img")!.src =
             vendingMachineBlender;
+    } else {
+        contentDiv!.innerHTML = `<h2>Chess</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quia sequi dolore earum eligendi sint molestiae aliquid ducimus maiores architecto illum nam facilis animi fugiat facere recusandae error impedit inventore, dolorem consequuntur explicabo officiis aspernatur pariatur? Assumenda autem id quae quam! Ad excepturi aperiam itaque optio quaerat voluptatibus, distinctio a.
+            </p>
+
+            <div class="chess-stats-container">
+                <div class="chesscom">
+                    <div class="full-row">Chess.com</div>
+                    <div class="full-row stat">Games: <div class="number">12,612</div></div>
+                    <div class="stat">Highest Blitz Rating: <div class="number">1839</div></div>
+                    <div class="stat">Highest Rapid Rating: <div class="number">1856</div></div>
+                    <div class="stat">Highest Bullet Rating: <div class="number">2019</div></div>
+                </div>
+
+                <div class="lichess">
+                    <div class="full-row">Lichess</div>
+                    <div class="full-row stat">Games: <div class="number">11,336</div></div>
+                    <div class="full-row stat">Highest Blitz Rating: <div class="number">2247</div></div>
+                </div>
+            </div>`;
     }
 }
 
-// load("hello");
+load("hello");
