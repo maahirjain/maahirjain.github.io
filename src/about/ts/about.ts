@@ -7,6 +7,11 @@ import pawnVP9 from "../assets/pawn_VP9.webm";
 import pawnPRORES from "../assets/pawn_PRORES.mov";
 import donutBlender from "../assets/blender_donut_animation.mp4";
 import vendingMachineBlender from "../assets/blender_vending_machine.png";
+import learningHorizontal from "../assets/learning_diagram.png";
+import learningVertical from "../assets/learning_diagram_vertical.png";
+import creatingHorizontal from "../assets/creating_diagram.png";
+import creatingVertical from "../assets/creating_diagram_vertical.png";
+import sharing from "../assets/sharing_diagram.png";
 
 createMenu();
 loadTheme();
@@ -167,21 +172,29 @@ function load(option: string) {
                 <div class="learning active">
                     <h2>LEARNING</h2>
                     <div class="content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore. Iusto accusantium officia itaque reiciendis iure recusandae, impedit optio, incidunt sit obcaecati labore ipsum ullam dolorem distinctio? Nesciunt quaerat vero repellat ratione nobis, sed debitis eaque sapiente. Sequi at, eos deserunt eaque quis beatae ut veritatis explicabo, nobis quo, est reprehenderit adipisci. Veritatis nobis dolorem quaerat ab dignissimos sit corporis sunt explicabo. Quidem numquam porro eius, provident culpa fugit error nesciunt dicta assumenda omnis facere aspernatur voluptatem nostrum, quam corrupti adipisci quia tempore id molestiae repudiandae quae esse iste quo asperiores. Dicta quam quia quae possimus quod quisquam incidunt ipsam.
+                        As a student, I am constantly engaged in learning. I strive to complement the theoretical foundations I learn in college with practical skills and experience. Here are some of my recent learnings.
+
+                        <img class="horizontal"></img>
+                        <img class="vertical"></img>
                     </div>
                 </div>
 
                 <div class="creating inactive">
                     <h2>CREATING</h2>
                     <div class="content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sed quis, dolorum consequatur animi tempore iusto eligendi quia modi error nostrum deserunt ipsa suscipit! Alias aliquid maxime iusto labore temporibus eos, a fuga natus officiis tenetur consectetur consequatur assumenda at ipsum corrupti officia numquam? Rerum excepturi dolorum eveniet doloribus fugiat quae dolore dolorem pariatur nam est, minima commodi optio maxime in magni harum odio delectus iure. Nobis nam praesentium sint amet at vel adipisci placeat quae labore culpa, exercitationem ullam. Obcaecati quisquam labore ipsum accusantium aperiam, odio dolore? Qui minus deleniti officiis tempora. Aperiam odit porro nisi iure atque culpa?
+                        My journey of software creation began with simple games in Scratch. Since then, I've been exposed to much more technology and theory, which has not only given me new skills to create with, but has also refined my understanding of how to create. Here are some of the considerations I've experimented with recently through the process of creation.
+
+                        <img class="horizontal"></img>
+                        <img class="vertical"></img>
                     </div>
                 </div>
 
                 <div class="sharing inactive">
                     <h2>SHARING</h2>
                     <div class="content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed modi debitis sequi hic laudantium, delectus perspiciatis sunt rem doloribus voluptatibus tempore eveniet officiis incidunt excepturi voluptatum qui, ratione, expedita minima! Nobis dolor quia ducimus hic ipsum necessitatibus quae perferendis cupiditate praesentium sequi, consequuntur nostrum voluptates error minima vero accusamus itaque, aut iure possimus. Ut quia voluptas exercitationem nemo tenetur, eos fugiat inventore. Doloremque adipisci nobis saepe sed ut fugiat tenetur velit error id culpa eos consequuntur quisquam, quam, facilis minima dolor amet non! Optio unde nihil veniam suscipit ducimus, sit est aliquam culpa ut deleniti facilis quis esse asperiores natus.
+                        It is my goal with every new skill I learn to use it in a way that helps people. I believe this is best achieved by sharing what I create, and iterating to deliver greater impact. Hence, in the near future, I hope to share more and more often.
+
+                        <img></img>
                     </div>
                 </div>
             </div>
@@ -199,6 +212,18 @@ function load(option: string) {
             document.querySelector(".creating");
         const sharingDiv: HTMLElement | null =
             document.querySelector(".sharing");
+
+        (<HTMLImageElement>learningDiv?.querySelector(".horizontal")).src =
+            learningHorizontal;
+        (<HTMLImageElement>learningDiv?.querySelector(".vertical")).src =
+            learningVertical;
+
+        (<HTMLImageElement>creatingDiv?.querySelector(".horizontal")).src =
+            creatingHorizontal;
+        (<HTMLImageElement>creatingDiv?.querySelector(".vertical")).src =
+            creatingVertical;
+
+        (<HTMLImageElement>sharingDiv?.querySelector("img")).src = sharing;
 
         // eslint-disable-next-line no-inner-declarations
         function getActiveDiv() {
@@ -263,7 +288,7 @@ function load(option: string) {
     } else if (option === "animation") {
         contentDiv!.innerHTML = `<h2>Animation</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repudiandae veniam dolores beatae corporis nesciunt officiis quis temporibus accusamus iusto, aut, libero atque tempora possimus a repellat? Vitae beatae natus delectus, sed dicta iure blanditiis perspiciatis placeat culpa sapiente officiis, doloribus enim pariatur quo dolorum modi iusto quas! Voluptatum, quos?
+                I've only picked up animation recently, but I've been amazed by what I can create with a few core tools. I like to think of myself as a creative guy, and I see animation as one avenue to explore my creativity. There's certainly a lot more to learn, but I'm excited to deepen my animation and 3D skills, and also extend them to the web with Three.JS and related tools. Nonetheless, here are some of my early projects created in Blender.
             </p>
 
             <div class="animation-img-container">
@@ -288,7 +313,7 @@ function load(option: string) {
     } else {
         contentDiv!.innerHTML = `<h2>Chess</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quia sequi dolore earum eligendi sint molestiae aliquid ducimus maiores architecto illum nam facilis animi fugiat facere recusandae error impedit inventore, dolorem consequuntur explicabo officiis aspernatur pariatur? Assumenda autem id quae quam! Ad excepturi aperiam itaque optio quaerat voluptatibus, distinctio a.
+                In 2020, during the pandemic, I got hooked onto chess. I played daily, actively watched chess content, and played online tournaments. Although I play less often now, when I do play, the game never ceases to excite and awe me. Here are some of the proud stats I've amounted till date. 
             </p>
 
             <div class="chess-stats-container">
