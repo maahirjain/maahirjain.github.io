@@ -40,13 +40,13 @@
         }
     }
 
-    .speech {
+    .speech, #resume-btn {
         background-color: themed(text);
         color: themed(contrast);
+    }
 
-        &::after {
-            border-top-color: themed(text);
-        }
+    .speech::after {
+        border-top-color: themed(text);
     }
 
     .chesscom > div:first-child {
@@ -119,10 +119,6 @@
         margin-top: 16px;
         width: 100%;
     }
-
-    .vertical {
-        display: none;
-    }
 }
 
 .active {
@@ -170,6 +166,14 @@
         border: 15px solid transparent;
         border-bottom: 0;
     }
+}
+
+#resume-btn {
+    grid-column: 1 / 4;
+    font-size: medium;
+    text-align: center;
+    padding: 4px;
+    border-radius: 10px;
 }
 
 .animation-img-container {

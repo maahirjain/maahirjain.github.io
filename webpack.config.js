@@ -67,6 +67,19 @@ export const module = {
         {
             test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|ttf|eot|ogg|mp3|wav|mov|mp4|webm)$/i,
             type: "asset/resource"
+        },
+
+        {
+            test: /\.(pdf)$/,
+            use: [
+                {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "assets/pdfs/"
+                    }
+                }
+            ]
         }
     ]
 };
