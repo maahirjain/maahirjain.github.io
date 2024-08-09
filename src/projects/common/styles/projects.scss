@@ -230,6 +230,15 @@ code {
     align-items: center;
     margin-top: 24px;
     gap: 8px;
+
+    .front {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    a {
+        padding: 6px 15px;
+    }
 }
 
 .pushable {
