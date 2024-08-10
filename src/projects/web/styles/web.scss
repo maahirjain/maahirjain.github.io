@@ -9,3 +9,12 @@
 #web {
     opacity: 1 !important;
 }
+
+.scrollable {
+    aspect-ratio: 16 / 9;
+    overflow: scroll;
+}
+
+.outline {
+    border: 1px solid white;
+}
