@@ -33,7 +33,30 @@
                         <h2 class="title-2">MatrixViz</h2>
 
                         <div class="project-text">
-                            A tool to visually interpret and animate matrices in terms of rotations, scaling, reflections, shears, and projections.
+                            A linear algebra tool that identifies linear transformations associated with any 3 x 3 or 2 x 2 matrix, and creates an interactive animation displaying the transformations.
+
+                            <h3>Features</h3>
+                            <ul>
+                                <li>Computes a series of linear transformations associated with the input matrix from rotations, scaling, reflections, shears, and projections</li>
+                                <li>Generates and displays an animation showing each linear transformation applied on the starting shape until the final effect of the matrix on the shape is seen</li>
+                                <li>Includes controls for the speed of the animation and to pause and play the ongoing animation</li>
+                                <li>Includes animations for 4 shapes - cube, pyramid, square and triangle</li>
+                                <li>Allows interactivity with the 3D graph to change the view of the animation</li>
+                                <li>Displays the matrix associated with each linear transform</li>
+                                <li>Accepts 2 x 2 and 3 x 3 matrices with support for math expression inputs such as sin(45deg) and sqrt(2)/2</li>
+                                <li>Displays the determinant, eigenvalues and corresponding eigenvectors of the input matrix, using MathJax</li>
+                                <li>Has both dark mode and light mode options</li>
+                                <li>Shows an outline of the initial shape showing a visual comparison between the starting and end result</li>
+                                <li>Implements form validation checks to ensure an input matrix is valid</li>
+                                <li>Stores 3D transform data across various interactions</li>
+                                <li>Responsive to various devices</li>
+                            </ul>
+
+                            <h3>Documentation</h3>
+                            <p>You can access TypeDoc documentation for the project <a href="https://maahirjain.github.io/matrix-viz/docs/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+                            <h3>Behind the Scenes</h3>
+                            <p>You can find a sketch of how the linear transformations associated with the input matrix are computed <a href="https://github.com/maahirjain/matrix-viz/tree/main?tab=readme-ov-file#behind-the-scenes" target="_blank" rel="noopener noreferrer">here</a>.</p>
                         </div>
     
                         <div class="project-btn-container">
