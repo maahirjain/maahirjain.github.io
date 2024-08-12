@@ -123,6 +123,10 @@ export function createMenu(): void {
         localStorage.setItem("currClass", currClass);
         location.href = "./";
     });
+
+    if (localStorage.getItem("currClass") === null) {
+        localStorage.setItem("currClass", "dark-theme");
+    }
 }
 
 export function toggleTheme(): void {
