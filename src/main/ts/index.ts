@@ -11,6 +11,18 @@ import hello3DDarkImgSrc from "../assets/hello_3d_dark.png";
 
 let backgroundAudioAllowed: boolean = false;
 
+function isIOS() {
+    const platform = navigator.platform;
+    return (
+        /iPad|iPhone|iPod/.test(platform) ||
+        (navigator.userAgent.includes("iPad") && "ontouchend" in document)
+    );
+}
+
+if (isIOS()) {
+    document.querySelector("video")?.remove();
+}
+
 createMenu();
 
 const interBubble = document.querySelector<HTMLDivElement>(".interactive")!;
@@ -49,13 +61,17 @@ const callback = (
         ) {
             const newClass = (<HTMLElement>mutation.target).className;
             if (newClass === "light-theme") {
-                document.querySelector("source")!.src = homeLightBgVid;
+                const source = document.querySelector("source");
 
-                const homeBgVideo = <HTMLVideoElement>(
-                    document.getElementById("homeBgVid")
-                );
+                if (source != null) {
+                    source.src = homeLightBgVid;
+                }
 
-                homeBgVideo.load();
+                const homeBgVideo = document.getElementById("homeBgVid");
+
+                if (homeBgVideo != null) {
+                    (<HTMLVideoElement>homeBgVideo).load();
+                }
 
                 root.style.setProperty("--color-bg1", "rgb(250, 249, 246)");
                 root.style.setProperty("--color-bg2", "rgb(238, 242, 243)");
@@ -71,15 +87,17 @@ const callback = (
                 (<HTMLImageElement>document.querySelector("img")).src =
                     hello3DLightImgSrc;
             } else if (newClass === "dark-theme") {
-                document.querySelector("source")!.src = homeDarkBgVid;
+                const source = document.querySelector("source");
 
-                const homeBgVideo = <HTMLVideoElement>(
-                    document.getElementById("homeBgVid")
-                );
+                if (source != null) {
+                    source.src = homeDarkBgVid;
+                }
 
-                homeBgVideo.load();
+                const homeBgVideo = document.getElementById("homeBgVid");
 
-                (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
+                if (homeBgVideo != null) {
+                    (<HTMLVideoElement>homeBgVideo).load();
+                }
 
                 root.style.setProperty("--color-bg1", "rgb(33, 34, 44)");
                 root.style.setProperty("--color-bg2", "rgb(0, 0, 0)");

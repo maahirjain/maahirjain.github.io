@@ -311,7 +311,7 @@ function load(option: string) {
 
             <div class="animation-img-container">
                 <div>
-                    <video controls></video>
+                    <video controls playsInline="true"></video>
                     <p>A 3D animation of a donut scene, created following <a href="https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z" target="_blank" rel="noopener noreferrer">Blender Guru's Beginner Donut Tutorial</a></p>
                 </div>
 

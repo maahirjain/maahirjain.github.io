@@ -122,3 +122,22 @@ img {
         }
     }
 }
+
+@supports (-webkit-touch-callout: none) {
+    video {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    .gradient-bg {
+        display: block !important;
+    }
+
+    .wrap div {
+        display: none !important;
+    }
+
+    img {
+        display: block !important;
+    }
+}
