@@ -34,6 +34,9 @@ donutSourceWEBM.type = "video/webm";
 donutVideoElement.appendChild(donutSourceMP4);
 donutVideoElement.appendChild(donutSourceWEBM);
 
+donutVideoElement.removeAttribute("controls");
+donutVideoElement.style.display = "block";
+
 animationBtn?.appendChild(donutVideoElement);
 
 const pawnVideoElement = document.createElement("video");
@@ -49,6 +52,10 @@ pawnSourceWEBM.type = "video/webm";
 
 pawnVideoElement.appendChild(pawnSourceMP4);
 pawnVideoElement.appendChild(pawnSourceWEBM);
+
+pawnVideoElement.removeAttribute("controls");
+pawnVideoElement.style.display = "block";
+
 chessBtn?.appendChild(pawnVideoElement);
 
 helloOption?.addEventListener("mouseover", () => {

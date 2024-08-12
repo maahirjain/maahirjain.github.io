@@ -51,7 +51,11 @@ const callback = (
             if (newClass === "light-theme") {
                 document.querySelector("source")!.src = homeLightBgVid;
 
-                (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
+                const homeBgVideo = <HTMLVideoElement>(
+                    document.getElementById("homeBgVid")
+                );
+
+                homeBgVideo.load();
 
                 root.style.setProperty("--color-bg1", "rgb(250, 249, 246)");
                 root.style.setProperty("--color-bg2", "rgb(238, 242, 243)");
@@ -68,6 +72,12 @@ const callback = (
                     hello3DLightImgSrc;
             } else if (newClass === "dark-theme") {
                 document.querySelector("source")!.src = homeDarkBgVid;
+
+                const homeBgVideo = <HTMLVideoElement>(
+                    document.getElementById("homeBgVid")
+                );
+
+                homeBgVideo.load();
 
                 (<HTMLVideoElement>document.getElementById("homeBgVid")).load();
 

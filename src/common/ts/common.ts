@@ -17,12 +17,12 @@ export function createMenu(): void {
     const aboutAnchor: HTMLAnchorElement = document.createElement("a");
     aboutAnchor.textContent = "About";
     aboutAnchor.id = "about";
-    aboutAnchor.setAttribute("href", "./about.html");
+    aboutAnchor.setAttribute("href", "./about");
 
     const projectsAnchor: HTMLElement = document.createElement("a");
     projectsAnchor.textContent = "Projects";
     projectsAnchor.id = "projects";
-    projectsAnchor.setAttribute("href", "./featured.html");
+    projectsAnchor.setAttribute("href", "./featured");
 
     div1.innerHTML = homeSVG;
     div1.appendChild(aboutAnchor);
@@ -53,10 +53,10 @@ export function createMenu(): void {
     mobileAnchor.id = "mobile";
     miscAnchor.id = "misc";
 
-    featuredAnchor.setAttribute("href", "./featured.html");
-    webAnchor.setAttribute("href", "./web.html");
-    mobileAnchor.setAttribute("href", "./mobile.html");
-    miscAnchor.setAttribute("href", "./misc.html");
+    featuredAnchor.setAttribute("href", "./featured");
+    webAnchor.setAttribute("href", "./web");
+    mobileAnchor.setAttribute("href", "./mobile");
+    miscAnchor.setAttribute("href", "./misc");
 
     projectsDropdownDiv.appendChild(featuredAnchor);
     projectsDropdownDiv.appendChild(webAnchor);
@@ -121,7 +121,7 @@ export function createMenu(): void {
     document.getElementById("home")?.addEventListener("click", () => {
         const currClass: string = document.documentElement.className;
         localStorage.setItem("currClass", currClass);
-        location.href = "./index.html";
+        location.href = "./";
     });
 }
 
