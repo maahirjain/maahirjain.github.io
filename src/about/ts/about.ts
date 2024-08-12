@@ -35,7 +35,11 @@ donutVideoElement.appendChild(donutSourceMP4);
 donutVideoElement.appendChild(donutSourceWEBM);
 
 donutVideoElement.removeAttribute("controls");
+donutVideoElement.controls = false;
+donutVideoElement.playsInline = true;
+donutVideoElement.setAttribute("playsInline", "");
 donutVideoElement.style.display = "block";
+donutVideoElement.load();
 
 animationBtn?.appendChild(donutVideoElement);
 
@@ -54,7 +58,11 @@ pawnVideoElement.appendChild(pawnSourceMP4);
 pawnVideoElement.appendChild(pawnSourceWEBM);
 
 pawnVideoElement.removeAttribute("controls");
+pawnVideoElement.controls = false;
+pawnVideoElement.playsInline = true;
+pawnVideoElement.setAttribute("playsInline", "");
 pawnVideoElement.style.display = "block";
+pawnVideoElement.load();
 
 chessBtn?.appendChild(pawnVideoElement);
 
