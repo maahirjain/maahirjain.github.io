@@ -124,6 +124,10 @@ img {
 }
 
 @supports (-webkit-touch-callout: none) {
+    .menu {
+        border-radius: 10px;
+    }
+
     video {
         display: none !important;
         visibility: hidden !important;

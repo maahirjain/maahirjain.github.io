@@ -18,6 +18,14 @@
         }
     }
 
+    .animation-img-container a {
+        color: themed(tertiary);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     #hello-option {
         border: 2px solid themed(text);
     }
@@ -440,8 +448,12 @@
     .chess-stats-container {
         flex-direction: column;
 
-        > div > div {
-            grid-column: 1 / -1;
+        > div {
+            align-content: start;
+
+            > div {
+                grid-column: 1 / -1;
+            }
         }
     }
 }
