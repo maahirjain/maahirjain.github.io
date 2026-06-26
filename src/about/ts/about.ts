@@ -181,7 +181,7 @@ function load(option: string) {
 
     if (option === "hello") {
         contentDiv!.innerHTML = `<h2>Hi, I'm Maahir Jain</h2>
-            <p>I'm a junior at <a href="https://www.cc.gatech.edu/" target="_blank" rel="noopener noreferrer" class="gt">Georgia Tech</a>, majoring in computer science. My work is motivated by my commitment to learning, creating, and sharing.</p>
+            <p>I'm a computer science graduate from <a href="https://www.cc.gatech.edu/" target="_blank" rel="noopener noreferrer" class="gt">Georgia Tech</a>, with experience as a software engineering intern at <a href="https://www.meta.com/" target="_blank" rel="noopener noreferrer" class="meta">Meta</a> and as a linear algebra teaching assistant. I'm passionate about creating beautiful web and mobile experiences, with additional interests in chess, mathematics, and computer graphics. My work is motivated by my commitment to learning, creating, and sharing.</p>
 
             <div class="slider-container">
                 <div class="learning active">
@@ -331,22 +331,22 @@ function load(option: string) {
     } else {
         contentDiv!.innerHTML = `<h2>Chess</h2>
             <p>
-                In 2020, during the pandemic, I got hooked onto chess. I played daily, actively watched chess content, and played online tournaments. Although I play less often now, when I do play, the game never ceases to excite and awe me. Here are some of the proud stats I've amounted till date. 
+                In 2020, during the pandemic, I got hooked onto chess. I played daily, actively watched chess content, and played online tournaments. Although I play less often now, when I do play, the game never ceases to excite and awe me. Here are some of the proud stats I've amassed till date (June 26, 2026). 
             </p>
 
             <div class="chess-stats-container">
                 <div class="chesscom">
                     <div class="full-row">Chess.com</div>
-                    <div class="full-row stat">Games: <div class="number">12,612</div></div>
-                    <div class="stat">Highest Blitz Rating: <div class="number">1839</div></div>
-                    <div class="stat">Highest Rapid Rating: <div class="number">1856</div></div>
-                    <div class="stat">Highest Bullet Rating: <div class="number">2019</div></div>
+                    <div class="full-row stat">Games: <div class="number">24,940</div></div>
+                    <div class="stat">Highest Blitz Rating: <div class="number">2221</div></div>
+                    <div class="stat">Highest Rapid Rating: <div class="number">2159</div></div>
+                    <div class="stat">Highest Bullet Rating: <div class="number">2255</div></div>
                 </div>
 
                 <div class="lichess">
                     <div class="full-row">Lichess</div>
-                    <div class="full-row stat">Games: <div class="number">11,336</div></div>
-                    <div class="full-row stat">Highest Blitz Rating: <div class="number">2247</div></div>
+                    <div class="full-row stat">Games: <div class="number">13,041</div></div>
+                    <div class="full-row stat">Highest Bullet Rating: <div class="number">2305</div></div>
                 </div>
             </div>`;
     }
